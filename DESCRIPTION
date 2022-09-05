@@ -15,4 +15,4 @@ Description: Package BHMSMAfMRI performs Bayesian hierarchical multi-subject mul
 VignetteBuilder: knitr
 License: GPL (>= 2)
 URL: https://www.r-project.org
-Repository: CRAN
+Repository: CRAN 
