@@ -53,5 +53,5 @@ k <- 2  #regressor of interest
 analysis <- "multi"     #perform multi-subject analysis
 BHMSMAmulti <- BHMSMA(n, grid, data, designmat, k, analysis)
 analysis <- "single"     #perform single subject analysis
-BHMSMAmulti <- BHMSMA(n, grid, data, designmat, k, analysis)
+BHMSMAsingle <- BHMSMA(n, grid, data, designmat, k, analysis)
 ```
