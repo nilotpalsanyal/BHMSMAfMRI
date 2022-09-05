@@ -15,20 +15,20 @@ their posterior distribution.
 
 ## Installation
 
-# Install from CRAN
+### Install from CRAN
 
 ``` r
 install.packages("BHMSMAfMRI")
 ```
 
-# Install from GitHub
+### Install from GitHub
 
 ``` r
 # install.packages("devtools")
 devtools::install_github("nilotpalsanyal/BHMSMAfMRI")
 ```
 
-## An example to illustrate the main function:
+## The main function:
 
 BHMSMA is the main function which accepts fMRI data as a 4D array (see
 code below) and a design matrix. For the time-series of all voxels, a
@@ -45,11 +45,13 @@ target="_blank">vignette</a>.
 library(BHMSMAfMRI)
 #> Loading required package: Rcpp
 n <- 3    #number of subjects
-grid <- 8   #the total number of voxels is grid^2
+grid <- 8   #total number of voxels is grid^2
 ntime <- 4  #number of timepoints
 data <- array(rnorm(n*grid*grid*ntime), dim=c(n,grid,grid,ntime))
 designmat <- cbind(c(1,1,1,1),c(1,0,1,0))
-k <- 2
-analysis <- "multi"
+k <- 2  #regressor of interest
+analysis <- "multi"     #perform multi-subject analysis
+BHMSMAmulti <- BHMSMA(n, grid, data, designmat, k, analysis)
+analysis <- "single"     #perform single subject analysis
 BHMSMAmulti <- BHMSMA(n, grid, data, designmat, k, analysis)
 ```
