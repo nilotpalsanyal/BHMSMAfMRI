@@ -4,7 +4,7 @@
 
 \title{Bayesian hierarchical multi-subject multiscale analysis (BHMSMA) of functional MRI data or other multiscale data}
 
-\description{\code{BHMSMA} is the main function that performs BHMSMA (Sanyal & Ferreira, 2012) of fMRI data, or other multiscale data, using wavelet-based prior that borrows strength across subjects and provides posterior smooth estimates of effect sizes. Specifically, \code{BHMSMA} constructs a 2D regression coefficient map (e.g., corresponding to a single brain slice) of a given regressor and returns its posterior smoothed version based on multi-subject or single subject analyses.}
+\description{\code{BHMSMA} is the main function that performs BHMSMA (Sanyal & Ferreira, 2012) of fMRI data, or other multiscale data, using wavelet-based prior that borrows strength across subjects and provides posterior smooth estimates of the effect sizes. Specifically, \code{BHMSMA} constructs a 2D regression coefficient map (e.g., corresponding to a single brain slice) of a given regressor and returns its posterior smoothed version based on multi-subject or single subject analyses.}
 
 \usage{
 BHMSMA(n, grid, data, designmat, k, analysis="multi", 

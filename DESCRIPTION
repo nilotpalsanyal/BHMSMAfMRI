@@ -11,8 +11,8 @@ Depends: R (>= 4.0), Rcpp (>= 1.0.9)
 Imports: oro.nifti, wavethresh, 
 LinkingTo: Rcpp, RcppArmadillo
 Suggests: knitr
-Description: Package BHMSMAfMRI performs Bayesian hierarchical multi-subject multiscale analysis of fMRI data as described in Sanyal & Ferreira (2012) <DOI:10.1016/j.neuroimage.2012.08.041>, or other multiscale data, using wavelet based prior that borrows strength across subjects and provides posterior smoothed estimates of the effect sizes and samples from their posterior distribution.
+Description: Package BHMSMAfMRI performs Bayesian hierarchical multi-subject multiscale analysis of fMRI data as described in Sanyal & Ferreira (2012) <DOI:10.1016/j.neuroimage.2012.08.041>, or other multiscale data, using wavelet based prior that borrows strength across subjects and provides posterior smoothed images of the effect sizes and samples from the posterior distribution.
 VignetteBuilder: knitr
 License: GPL (>= 2)
-URL: https://www.r-project.org
-Repository: CRAN 
+URL: https://github.com/nilotpalsanyal/BHMSMAfMRI
+Repository: CRAN

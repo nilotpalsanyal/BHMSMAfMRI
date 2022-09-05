@@ -6,7 +6,7 @@
 
 \title{Bayesian Hierarchical Multi-Subject Multiscale Analysis (BHMSMA) of Functional MRI Data}
 
-\description{The \pkg{BHMSMAfMRI} package performs BHMSMA (Sanyal & Ferreira, 2012) of fMRI data, or other multiscale data, using wavelet based prior that borrows strength across subjects and provides posterior smoothed estimates of the effect sizes and samples from their posterior distribution. The package currently considers analysis of 2D slices/grids only.
+\description{The \pkg{BHMSMAfMRI} package performs BHMSMA (Sanyal & Ferreira, 2012) of fMRI data, or other multiscale data, using wavelet based prior that borrows strength across subjects and provides posterior smoothed images of the effect sizes and samples from the posterior distribution. The package currently considers analysis of 2D slices/grids only.
 }
 
 \details{
