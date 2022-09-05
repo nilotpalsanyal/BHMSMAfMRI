@@ -1,0 +1,8 @@
+useDynLib(BHMSMAfMRI, .registration=TRUE)
+importFrom(Rcpp, evalCpp)
+import(RcppArmadillo)
+importFrom("wavethresh","imwd","imwr")
+importFrom("oro.nifti", "readAFNI", "readANALYZE", "readNIfTI")
+importFrom("stats", "anova", "lm", "nlminb", "qnorm", "rbinom", "rnorm")
+export("glmcoef", "waveletcoef", "hyperparamest", "postmixprob", "postwaveletcoef", "substituteWaveletCoef", "postglmcoef", "BHMSMA", "postsamples", "postgroupglmcoef", "readfmridata")
+
