@@ -1,24 +1,5 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-<!-- # set the overall width of the HTML page -->
-<style type="text/css"> /* This sets the overall width of the HTML page */
-  .main-container {
-    max-width: 1000px;   
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  body, td {
-     font-size: 16px;
-     font-family: Arial;
-  }
-  code.r{         /*for r code*/
-    font-size: 16px;
-  }
-  pre {         /*for output of knitr chunks*/
-    font-size: 16px
-  }
-</style>
 
 # BHMSMAfMRI: Bayesian Hierarchical Multi-Subject Multiscale Analysis of fMRI Data
 
