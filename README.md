@@ -1,17 +1,21 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# BHMSMAfMRI
+# BHMSMAfMRI: Bayesian Hierarchical Multi-Subject Multiscale Analysis of fMRI Data
+
+<img src="man/figures/logo.png" align="right" height="100" />
 
 <!-- badges: start -->
+
+[![CRAN
+status](https://www.r-pkg.org/badges/version/BHMSMAfMRI)](https://CRAN.R-project.org/package=BHMSMAfMRI)
 <!-- badges: end -->
 
 BHMSMAfMRI performs Bayesian hierarchical multi-subject multiscale
 analysis of function MRI (fMRI) data as described in Sanyal & Ferreira
-(2012) <DOI:10.1016/j.neuroimage.2012.08.041>, or other multiscale data,
-using wavelet based prior that borrows strength across subjects and
-provides posterior smooth estimates of the effect sizes and samples from
-their posterior distribution.
+(2012), or other multiscale data, using wavelet based prior that borrows
+strength across subjects and provides posterior smooth estimates of the
+effect sizes and samples from their posterior distribution.
 
 ## Installation
 
@@ -55,3 +59,10 @@ BHMSMAmulti <- BHMSMA(n, grid, data, designmat, k, analysis)
 analysis <- "single"     #perform single subject analysis
 BHMSMAsingle <- BHMSMA(n, grid, data, designmat, k, analysis)
 ```
+
+## References:
+
+Sanyal, Nilotpal, and Ferreira, Marco A.R. (2012). Bayesian hierarchical
+multi-subject multiscale analysis of functional MRI data. Neuroimage,
+63, 3, 1519-1531. <span
+target="_blank"><https://doi.org/10.1016/j.neuroimage.2012.08.041></span>
