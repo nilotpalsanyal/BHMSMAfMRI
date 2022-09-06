@@ -69,7 +69,7 @@ BHMSMAmulti <- BHMSMA(n, grid, data, designmat,
   k, analysis)
 
 zlim = c(0,max(abs(BHMSMAmulti$GLMCoefStandardized)))
-par(mfrow=c(2,2))
+par(mfrow=c(1,2))
 image( abs(BHMSMAmulti$GLMCoefStandardized[1,,,k]),
   col=heat.colors(12),zlim=zlim,main="GLM coef map")
 image( abs(BHMSMAmulti$GLMcoefposterior[1,,]),

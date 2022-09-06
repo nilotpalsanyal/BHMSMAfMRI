@@ -72,13 +72,14 @@
 
       </header><div class="row">
   <div class="contents col-md-9">
+
+<p><img src="reference/figures/logo.png" align="right" style="float:right; height:140px;"></p>
 <div class="section level1">
 <div class="page-header"><h1 id="bhmsmafmri-bayesian-hierarchical-multi-subject-multiscale-analysis-of-fmri-data">BHMSMAfMRI: Bayesian Hierarchical Multi-Subject Multiscale Analysis of fMRI Data<a class="anchor" aria-label="anchor" href="#bhmsmafmri-bayesian-hierarchical-multi-subject-multiscale-analysis-of-fmri-data"></a>
 </h1></div>
-<p><img src="reference/figures/logo.png" align="right" style="float:right; height:130px;"></p>
 <!-- badges: start -->
 
-<p>BHMSMAfMRI performs Bayesian hierarchical multi-subject multiscale analysis of function MRI (fMRI) data as described in Sanyal &amp; Ferreira (2012), or other multiscale data, using wavelet based prior that borrows strength across subjects and provides posterior smooth estimates of the effect sizes and samples from their posterior distribution.</p>
+<p>BHMSMAfMRI performs Bayesian hierarchical multi-subject multiscale analysis of function MRI (fMRI) data as described in Sanyal &amp; Ferreira (<a href="#ref-paper">2012</a>), or other multiscale data, using wavelet based prior that borrows strength across subjects and provides posterior smooth estimates of the effect sizes and samples from their posterior distribution.</p>
 <div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h2>
@@ -101,7 +102,7 @@
 </h2>
 <p>BHMSMA is the main function which accepts fMRI data as a 4D array (see code below) and a design matrix. For the time-series of all voxels, a general linear model (GLM) is fit with all the regressors in the design matrix. After that, the standardized regression coefficient map of a regressor of interest is subjected to further analysis. The function BHMSMA returns the posterior smoothed image of the regression coefficients. Below is a basic illustration of its use. For a detailed manual, see the package <a href="https://cran.r-project.org/web/packages/BHMSMAfMRI/vignettes/BHMSMAfMRIvignette.pdf" target="_blank" class="external-link">vignette</a>.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/nilotpalsanyal/BHMSMAfMRI" class="external-link">BHMSMAfMRI</a></span><span class="op">)</span></span>
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://nilotpalsanyal.github.io/BHMSMAfMRI/" class="external-link">BHMSMAfMRI</a></span><span class="op">)</span></span>
 <span><span class="co">#&gt; Loading required package: Rcpp</span></span>
 <span><span class="va">n</span> <span class="op">&lt;-</span> <span class="fl">3</span>    <span class="co">#number of subjects</span></span>
 <span><span class="va">grid</span> <span class="op">&lt;-</span> <span class="fl">8</span>   <span class="co">#total number of voxels is grid^2</span></span>
@@ -117,9 +118,16 @@
 <div class="section level2">
 <h2 id="references">References:<a class="anchor" aria-label="anchor" href="#references"></a>
 </h2>
+<div id="refs" class="references">
+
+<div id="ref-paper">
+
 <p>Sanyal, Nilotpal, and Ferreira, Marco A.R. (2012). Bayesian hierarchical multi-subject multiscale analysis of functional MRI data. Neuroimage, 63, 3, 1519-1531. <span target="_blank"><a href="https://doi.org/10.1016/j.neuroimage.2012.08.041" class="external-link uri">https://doi.org/10.1016/j.neuroimage.2012.08.041</a></span></p>
 </div>
 </div>
+</div>
+</div>
+
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
