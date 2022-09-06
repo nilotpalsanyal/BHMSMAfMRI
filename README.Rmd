@@ -13,8 +13,30 @@ knitr::opts_chunk$set(
 )
 ```
 
+<!-- # set the overall width of the HTML page -->
+<style type="text/css"> /* This sets the overall width of the HTML page */
+  .main-container {
+    max-width: 1000px;   
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  body, td {
+     font-size: 16px;
+     font-family: Arial;
+  }
+  code.r{         /*for r code*/
+    font-size: 16px;
+  }
+  pre {         /*for output of knitr chunks*/
+    font-size: 16px
+  }
+</style>
+
+
+
 # BHMSMAfMRI: Bayesian Hierarchical Multi-Subject Multiscale Analysis of fMRI Data
-<img src="man/figures/logo.png" align="right" height="100" />
+<img src="man/figures/logo.png" align="right" style="float:right; height:130px;" />
 
 <!-- badges: start -->
 [![CRAN status](https://www.r-pkg.org/badges/version/BHMSMAfMRI)](https://CRAN.R-project.org/package=BHMSMAfMRI)
