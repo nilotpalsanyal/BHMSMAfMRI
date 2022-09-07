@@ -53,15 +53,18 @@ In this section we illustrate the use of the package functions. We assume that p
 
 ## The main function `BHMSMA`
 
-`BHMSMA` is the main function of the **BHMSMAfMRI** package. `BHMSMA` accepts fMRI data as a 4D array. The data can be imported from various image files by the `readfmridata` function. `BHMSMA` successively calls the following functions to perform the whole analysis --- `glmcoef` to obtain regression coefficient map of the regressor of interest,  `waveletcoef` to perform 2D wavelet transformation of the regression coefficient map, `hyperparamest` to obtain estimates of the BHMSMA model hyperparameters, `postmixprob` to obtain estimates of the mixture probabilities that define posterior distribution of the wavelet coefficients, `postwaveletcoef` to obtain the posterior estimates of the wavelet coefficients and finally `postglmcoef` to obtain the posterior smoothed version of the regression coefficient map. If true coefficients are given, `BHMSMA` also returns mean squared error (MSE) estimates. Here is a quick look at the final output of the analysis to be detailed below.
+`BHMSMA` is the main function of the **BHMSMAfMRI** package. `BHMSMA` accepts fMRI data as a 4D array. The data can be imported from various image files by the `readfmridata` function. `BHMSMA` successively calls the following functions to perform the whole analysis --- `glmcoef` to obtain regression coefficient map of the regressor of interest,  `waveletcoef` to perform 2D wavelet transformation of the regression coefficient map, `hyperparamest` to obtain estimates of the BHMSMA model hyperparameters, `postmixprob` to obtain estimates of the mixture probabilities that define posterior distribution of the wavelet coefficients, `postwaveletcoef` to obtain the posterior estimates of the wavelet coefficients and finally `postglmcoef` to obtain the posterior smoothed version of the regression coefficient map. If true coefficients are given, `BHMSMA` also returns mean squared error (MSE) estimates. Here is a quick look at the usage and outputs of the function.
 
-```{r, out.lines = 10}
+```{r, out.lines = 10, eval=F}
 library(BHMSMAfMRI)
 BHMSMAmulti <- BHMSMA(n, grid, data, designmat, k, "multi", truecoef)
 names(BHMSMAmulti)
+#[1] "GLMCoefStandardized"      "GLMCoefSE"                "WaveletCoefficientMatrix"
+#[4] "hyperparam"               "hyperparamVar"            "posteriorMixProb"        
+#[7] "Waveletcoefposterior"     "GLMcoefposterior"        
 ``` 
 
-The argument `k` selects the regressor of interest from the design matrix `designmat` which can have multiple regressor columns. Following sections break down the whole analysis shown above by showing specific uses and outputs of all the above functions and several others of the **BHMSMAfMRI** package.
+The dimension of `data` is `c(n,grid,grid,ntime)` where `n` is the number of sujects, `grid^2` is the total number of voxels in the data and `ntime` is the length of time-series for each voxel. The argument `k` selects the regressor of interest from the design matrix `designmat` which can have multiple regressor columns. Following sections break down the whole analysis shown above by showing specific uses and outputs of all the above functions and several others of the **BHMSMAfMRI** package.
 
 
 ## Reading fMRI Data: `readfmridata`
@@ -71,6 +74,7 @@ The function `readfmridata` can read fMRI data file(s) stored in ANALYZE format 
 For illustration, we consider a simulated fMRI dataset stored in ANALYZE format and provided within the **BHMSMAfMRI** package. The dataset contains noisy fMRI data collected over a $32 \times 32$ grid of a single axial brain slice and at 9 timepoints for 3 subjects. The following code illustrates how the function `readfmridata` can be used to import the data from the image files. The simulated dataset is extracted in the directory `fmridata` within the R temporary folder.
  
 ```{r, eval=T}
+library(BHMSMAfMRI)
 fpath <- system.file("extdata", package="BHMSMAfMRI")
 untar(paste0(fpath,"/fmridata.tar"), exdir=tempdir())
 n <- 3
@@ -121,6 +125,7 @@ dim(glmmap$GLMCoefSE)
 The output `glmmap` contains the estimated standardized regression coefficients and their standard error estimates. From now on, we focus on the 2$^\text{nd}$ regressor as the regressor of interest. Figure \@ref(fig:GLMCoef), obtained by the following code, shows the images of its standardized regression coefficients estimates for the 3 subjects.
 
 ```{r GLMCoef, fig.cap = "Standardized regression coefficient estimates images for the second regressor for all subjects", fig.width=12, fig.height=4.2}
+k <- 2
 par(mfrow=c(1,n), cex=1)
 for(subject in 1:n)
   image(abs(glmmap$GLMCoefStandardized[subject,,,k]), col=heat.colors(8),
@@ -242,7 +247,7 @@ The argument `nsample` denotes the number of samples to be drawn. We can see `po
 ```{r PostDiscovery, eval=T, fig.cap = "Posterior discovery images for the 3 subjects", fig.width=12, fig.height=4.2}
 par(mfrow=c(1,n))
 for(subject in 1:n)
-  image(Postsamples$postdiscovery[subject,,], col=heat.colors(8),
+  image(Postsamp$postdiscovery[subject,,], col=heat.colors(8),
    main=paste0("Subject ",subject))
 ``` 
 
@@ -251,7 +256,7 @@ From the posterior samples, the posterior standard deviations of the regression 
 ```{r, eval=T}
 postsd <- array(dim=c(n,grid,grid))
 for(subject in 1:n)
- postsd[subject,,] <- apply(Postsamples$samples[subject,,,], 1:2, sd)
+ postsd[subject,,] <- apply(Postsamp$samples[subject,,,], 1:2, sd)
                              round(postsd[1,1:5,1:5],3)
 ``` 
 

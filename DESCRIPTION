@@ -11,7 +11,7 @@ Description: Package BHMSMAfMRI performs Bayesian hierarchical multi-subject mul
 License: GPL (>= 2)
 Imports: Rcpp (>= 1.0.9), oro.nifti, wavethresh
 LinkingTo: Rcpp, RcppArmadillo
-Suggests: knitr
+Suggests: knitr, rmarkdown
 VignetteBuilder: knitr
 URL: https://github.com/nilotpalsanyal/BHMSMAfMRI
 BugReports: https://github.com/nilotpalsanyal/BHMSMAfMRI/issues
