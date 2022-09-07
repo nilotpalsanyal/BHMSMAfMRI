@@ -114,9 +114,9 @@ In this section we illustrate the use of the package functions. We assume that p
 
 \footnotesize  
 \begin{verbatim}
-> BHMSMAoutput.multi <- BHMSMA ( n, grid, data, designmat, k, "multi", 
+> BHMSMAmulti <- BHMSMA ( n, grid, data, designmat, k, "multi", 
 							truecoef )
-> names(BHMSMAoutput.multi)
+> names(BHMSMAmulti)
 [1] "GLMCoefStandardized"     "GLMEstimatedSE"           "WaveletCoefficientMatrix"
 [4] "hyperparam"               "hyperparamVar"            "pkljbar"                
 [7] "PostMeanWaveletCoef"    "GLMcoefposterior"        "MSE"  

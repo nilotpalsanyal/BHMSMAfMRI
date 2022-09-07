@@ -40,7 +40,7 @@ code below) and a design matrix. For the time-series of all voxels, a
 general linear model (GLM) is fit with all the regressors in the design
 matrix. After that, the standardized regression coefficient map of a
 regressor of interest is subjected to further analysis. The function
-BHMSMA returns the posterior smoothed image of the regression
+BHMSMA returns the posterior smoothed map of the regression
 coefficients. Below is a basic illustration of its use. For a detailed
 manual, see the package <a
 href="https://cran.r-project.org/web/packages/BHMSMAfMRI/vignettes/BHMSMAfMRIvignette.pdf"
@@ -49,17 +49,47 @@ target="_blank">vignette</a>.
 ``` r
 library(BHMSMAfMRI)
 #> Loading required package: Rcpp
-n <- 3    #number of subjects
-grid <- 8   #total number of voxels is grid^2
-ntime <- 4  #number of timepoints
-data <- array(rnorm(n*grid*grid*ntime), dim=c(n,grid,grid,ntime))
-designmat <- cbind(c(1,1,1,1),c(1,0,1,0))
-k <- 2  #regressor of interest
-analysis <- "multi"     #perform multi-subject analysis
-BHMSMAmulti <- BHMSMA(n, grid, data, designmat, k, analysis)
-analysis <- "single"     #perform single subject analysis
-BHMSMAsingle <- BHMSMA(n, grid, data, designmat, k, analysis)
+
+# Read data from image files
+fpath <- system.file("extdata", package="BHMSMAfMRI")
+untar(paste0(fpath,"/fmridata.tar"), exdir=tempdir())
+n <- 3
+grid <- 32
+ntime <- 9
+data <- array(dim=c(n,grid,grid,ntime))
+for(subject in 1:n)
+{
+  directory <- paste0(tempdir(),"/fmridata","/s0",subject,"/")
+  a <- readfmridata(directory, format="Analyze", prefix=paste0("s0",subject,"_t"),
+                    nimages=9, dim.image=c(grid,grid,1))
+  data[subject,,,] <- a[,,1,]
+}
+data(fmridata)
+names(fmridata)
+#> [1] "grid"         "nsubject"     "TrueCoeff"    "DesignMatrix"
+truecoef <- fmridata$TrueCoeff
+designmat <- fmridata$DesignMatrix
+
+# Perform analyses
+k <- 2  #consider the second regressor
+analysis <- "multi"     #perform multi-subject analysis (MSA)
+BHMSMAmulti <- BHMSMA(n, grid, data, designmat, k, analysis, truecoef)
+analysis <- "single"     #perform single subject analysis (SSA)
+BHMSMAsingle <- BHMSMA(n, grid, data, designmat, k, analysis, truecoef)
+
+# Compare results for the first subject
+zlim = c(0,max(abs(BHMSMAmulti$GLMCoefStandardized[1,,,k])))
+par(mfrow=c(2,2))
+image( truecoef[1,,],col=heat.colors(12),main="true map")
+image( abs(BHMSMAsingle$GLMCoefStandardized[1,,,k]),
+       col=heat.colors(8),zlim=zlim,main="GLM coef map")
+image( abs(BHMSMAsingle$GLMcoefposterior[1,,]),
+       col=heat.colors(8),zlim=zlim,main="posterior map SSA")
+image( abs(BHMSMAmulti$GLMcoefposterior[1,,]),
+       col=heat.colors(8),zlim=zlim,main="posterior map MSA")
 ```
+
+<img src="man/figures/README-example-1.png" width="100%" />
 
 ## References:
 
