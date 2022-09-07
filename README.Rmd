@@ -20,6 +20,7 @@ knitr::opts_chunk$set(
 
 <!-- badges: start -->
 [![CRAN status](https://www.r-pkg.org/badges/version/BHMSMAfMRI)](https://CRAN.R-project.org/package=BHMSMAfMRI)
+[![R-CMD-check](https://github.com/nilotpalsanyal/BHMSMAfMRI/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/nilotpalsanyal/BHMSMAfMRI/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 BHMSMAfMRI performs Bayesian hierarchical multi-subject multiscale analysis of function MRI (fMRI) data as described in Sanyal & Ferreira ([2012](#ref-paper)), or other multiscale data, using wavelet based prior that borrows strength across subjects and provides posterior smooth estimates of the effect sizes and samples from their posterior distribution.
