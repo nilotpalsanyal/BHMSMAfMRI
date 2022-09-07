@@ -7,7 +7,7 @@ Authors@R: c(person("Nilotpal", "Sanyal", role = c("aut", "cre"), email = "nilot
 	      person("Marco A.R.", "Ferreira", role = "aut"))
 Author: Nilotpal Sanyal [aut, cre], Marco A.R. Ferreira [aut]
 Maintainer: Nilotpal Sanyal <nilotpal.sanyal@gmail.com>
-Depends: R (>= 4.0)
+Depends: R (>= 4.0), RcppArmadillo
 Imports: Rcpp (>= 1.0.9), oro.nifti, wavethresh, 
 LinkingTo: Rcpp, RcppArmadillo
 Suggests: knitr
