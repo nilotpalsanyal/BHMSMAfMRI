@@ -59,9 +59,10 @@ In this section we illustrate the use of the package functions. We assume that p
 library(BHMSMAfMRI)
 BHMSMAmulti <- BHMSMA(n, grid, data, designmat, k, "multi", truecoef)
 names(BHMSMAmulti)
-#[1] "GLMCoefStandardized"      "GLMCoefSE"                "WaveletCoefficientMatrix"
-#[4] "hyperparam"               "hyperparamVar"            "posteriorMixProb"        
-#[7] "Waveletcoefposterior"     "GLMcoefposterior"        
+[1] "GLMCoefStandardized"      "GLMCoefSE"               
+[3] "WaveletCoefficientMatrix" "hyperparam"              
+[5] "hyperparamVar"            "posteriorMixProb"        
+[7] "Waveletcoefposterior"     "GLMcoefposterior"
 ``` 
 
 The dimension of `data` is `c(n,grid,grid,ntime)` where `n` is the number of sujects, `grid^2` is the total number of voxels in the data and `ntime` is the length of time-series for each voxel. The argument `k` selects the regressor of interest from the design matrix `designmat` which can have multiple regressor columns. Following sections break down the whole analysis shown above by showing specific uses and outputs of all the above functions and several others of the **BHMSMAfMRI** package.
