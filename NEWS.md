@@ -16,19 +16,19 @@
 		  The vignette is updated.
 
 
-# BHMSMAfMRI v1.3 (Release Date: 2019-05-15)
+# BHMSMAfMRI v1.3
 
 * Fixed some issues in the function manual files.
 
 
-# BHMSMAfMRI v1.2 (Release Date: 2019-05-13)
+# BHMSMAfMRI v1.2
 
 * Changes in main author (corresponding author) email and affiliation.
 
 * Changes in package dependency: Dependency on the packages "fmri" and "ANALYZEfmri" were removed, and in that place, dependency on the package "oro.nifti" was added. The only function updated according with the above changes is read.fmridata.
 
 
-# BHMSMAfMRI v1.1 (Release Date: 2017-05-04)
+# BHMSMAfMRI v1.1
 
 * Changes in main author (corresponding author) email and affiliation. 
 

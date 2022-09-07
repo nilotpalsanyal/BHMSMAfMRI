@@ -102,7 +102,7 @@
 </h2>
 <p>BHMSMA is the main function which accepts fMRI data as a 4D array (see code below) and a design matrix. For the time-series of all voxels, a general linear model (GLM) is fit with all the regressors in the design matrix. After that, the standardized regression coefficient map of a regressor of interest is subjected to further analysis. The function BHMSMA returns the posterior smoothed image of the regression coefficients. Below is a basic illustration of its use. For a detailed manual, see the package <a href="https://cran.r-project.org/web/packages/BHMSMAfMRI/vignettes/BHMSMAfMRIvignette.pdf" target="_blank" class="external-link">vignette</a>.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://nilotpalsanyal.github.io/BHMSMAfMRI/" class="external-link">BHMSMAfMRI</a></span><span class="op">)</span></span>
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/nilotpalsanyal/BHMSMAfMRI" class="external-link">BHMSMAfMRI</a></span><span class="op">)</span></span>
 <span><span class="co">#&gt; Loading required package: Rcpp</span></span>
 <span><span class="va">n</span> <span class="op">&lt;-</span> <span class="fl">3</span>    <span class="co">#number of subjects</span></span>
 <span><span class="va">grid</span> <span class="op">&lt;-</span> <span class="fl">8</span>   <span class="co">#total number of voxels is grid^2</span></span>
