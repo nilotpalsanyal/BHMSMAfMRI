@@ -30,7 +30,7 @@ install.packages("BHMSMAfMRI")
 
 ``` r
 # install.packages("devtools")
-devtools::install_github("nilotpalsanyal/BHMSMAfMRI")
+devtools::install_github("nilotpalsanyal/BHMSMAfMRI", build_vignettes = TRUE)
 ```
 
 ## The main function:
