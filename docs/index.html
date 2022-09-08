@@ -115,7 +115,6 @@
 <p>BHMSMA is the main function which accepts fMRI data as a 4D array (see code below) and a design matrix. For the time-series of all voxels, a general linear model (GLM) is fit with all the regressors in the design matrix. After that, the standardized regression coefficient map of a regressor of interest is subjected to further analysis. The function BHMSMA returns the posterior smoothed map of the regression coefficients. Below is a basic illustration of its use. For a detailed manual, see the package <a href="https://cran.r-project.org/web/packages/BHMSMAfMRI/vignettes/BHMSMAfMRIvignette.pdf" target="_blank" class="external-link">vignette</a>.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/nilotpalsanyal/BHMSMAfMRI" class="external-link">BHMSMAfMRI</a></span><span class="op">)</span></span>
-<span><span class="co">#&gt; Loading required package: Rcpp</span></span>
 <span></span>
 <span><span class="co"># Read data from image files</span></span>
 <span><span class="va">fpath</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"extdata"</span>, package<span class="op">=</span><span class="st">"BHMSMAfMRI"</span><span class="op">)</span></span>
@@ -209,6 +208,7 @@
 <ul class="list-unstyled">
 <li><a href="https://CRAN.R-project.org/package=BHMSMAfMRI" class="external-link"><img src="https://www.r-pkg.org/badges/version/BHMSMAfMRI" alt="CRAN status"></a></li>
 <li><a href="https://github.com/nilotpalsanyal/BHMSMAfMRI/actions/workflows/R-CMD-check.yaml" class="external-link"><img src="https://github.com/nilotpalsanyal/BHMSMAfMRI/actions/workflows/R-CMD-check.yaml/badge.svg" alt="R-CMD-check"></a></li>
+<li><a href="https://www.codefactor.io/repository/github/nilotpalsanyal/bhmsmafmri" class="external-link"><img src="https://www.codefactor.io/repository/github/nilotpalsanyal/bhmsmafmri/badge" alt="CodeFactor"></a></li>
 </ul>
 </div>
 
