@@ -11,6 +11,8 @@
 status](https://www.r-pkg.org/badges/version/BHMSMAfMRI)](https://CRAN.R-project.org/package=BHMSMAfMRI)
 [![R-CMD-check](https://github.com/nilotpalsanyal/BHMSMAfMRI/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/nilotpalsanyal/BHMSMAfMRI/actions/workflows/R-CMD-check.yaml)
 [![CodeFactor](https://www.codefactor.io/repository/github/nilotpalsanyal/bhmsmafmri/badge)](https://www.codefactor.io/repository/github/nilotpalsanyal/bhmsmafmri)
+![visitor
+badge](https://visitor-badge.glitch.me/badge?page_id=jwenjian.visitor-badge&left_color=red&right_color=green)
 <!-- badges: end -->
 
 BHMSMAfMRI performs Bayesian hierarchical multi-subject multiscale
@@ -50,6 +52,12 @@ target="_blank">vignette</a>.
 
 ``` r
 library(BHMSMAfMRI)
+#> 
+#>  Welcome! Thanks for trying BHMSMAfMRI.
+#>  
+#>  Website: https://nilotpalsanyal.github.io/BHMSMAfMRI/
+#>  
+#>  Bug report: https://github.com/nilotpalsanyal/BHMSMAfMRI/issues
 
 # Read data from image files
 fpath <- system.file("extdata", package="BHMSMAfMRI")
