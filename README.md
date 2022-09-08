@@ -10,6 +10,7 @@
 [![CRAN
 status](https://www.r-pkg.org/badges/version/BHMSMAfMRI)](https://CRAN.R-project.org/package=BHMSMAfMRI)
 [![R-CMD-check](https://github.com/nilotpalsanyal/BHMSMAfMRI/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/nilotpalsanyal/BHMSMAfMRI/actions/workflows/R-CMD-check.yaml)
+[![CodeFactor](https://www.codefactor.io/repository/github/nilotpalsanyal/bhmsmafmri/badge)](https://www.codefactor.io/repository/github/nilotpalsanyal/bhmsmafmri)
 <!-- badges: end -->
 
 BHMSMAfMRI performs Bayesian hierarchical multi-subject multiscale
