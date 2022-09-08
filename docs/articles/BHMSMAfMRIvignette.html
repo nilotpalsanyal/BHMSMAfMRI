@@ -232,8 +232,15 @@ how the function <code>readfmridata</code> can be used to import the
 data from the image files. The simulated dataset is extracted in the
 directory <code>fmridata</code> within the R temporary folder.</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/nilotpalsanyal/BHMSMAfMRI" class="external-link">BHMSMAfMRI</a></span><span class="op">)</span></span>
-<span><span class="va">fpath</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"extdata"</span>, package<span class="op">=</span><span class="st">"BHMSMAfMRI"</span><span class="op">)</span></span>
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/nilotpalsanyal/BHMSMAfMRI" class="external-link">BHMSMAfMRI</a></span><span class="op">)</span></span></code></pre></div>
+<pre><code><span><span class="co">## </span></span>
+<span><span class="co">##  Welcome! Thanks for trying BHMSMAfMRI.</span></span>
+<span><span class="co">##  </span></span>
+<span><span class="co">##  Website: https://nilotpalsanyal.github.io/BHMSMAfMRI/</span></span>
+<span><span class="co">##  </span></span>
+<span><span class="co">##  Bug report: https://github.com/nilotpalsanyal/BHMSMAfMRI/issues</span></span></code></pre>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">fpath</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"extdata"</span>, package<span class="op">=</span><span class="st">"BHMSMAfMRI"</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/untar.html" class="external-link">untar</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="va">fpath</span>,<span class="st">"/fmridata.tar"</span><span class="op">)</span>, exdir<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempdir</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="va">n</span> <span class="op">&lt;-</span> <span class="fl">3</span></span>
 <span><span class="va">grid</span> <span class="op">&lt;-</span> <span class="fl">32</span></span>
@@ -255,16 +262,16 @@ with activation in 3 regions. The positions of 2 activation regions were
 varied across subject. The underlying design was a block design. The
 true regression coefficient images and the design matrix are also
 included in the package and can be read as follows.</p>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">fmridata</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/names.html" class="external-link">names</a></span><span class="op">(</span><span class="va">fmridata</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">## [1] "grid"         "nsubject"     "TrueCoeff"    "DesignMatrix"</span></span></code></pre>
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">truecoef</span> <span class="op">&lt;-</span> <span class="va">fmridata</span><span class="op">$</span><span class="va">TrueCoeff</span></span>
 <span><span class="va">designmat</span> <span class="op">&lt;-</span> <span class="va">fmridata</span><span class="op">$</span><span class="va">DesignMatrix</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/dim.html" class="external-link">dim</a></span><span class="op">(</span><span class="va">truecoef</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">## [1]  3 32 32</span></span></code></pre>
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/dim.html" class="external-link">dim</a></span><span class="op">(</span><span class="va">designmat</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">## [1] 9 2</span></span></code></pre>
 <p>Now, we have <code>truecoef</code> which is an array of dimension (3,
@@ -274,12 +281,12 @@ noisy observations for all the subjects and <code>designmat</code> which
 is the design matrix used to generate the data. Note that, the R package
 <strong>neuRosim</strong> <span class="citation">(Welvaert et al.
 2011)</span> can be used to generate fMRI data.</p>
-<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/par.html" class="external-link">par</a></span><span class="op">(</span>mfrow<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="va">n</span><span class="op">)</span>, cex<span class="op">=</span><span class="fl">1</span><span class="op">)</span></span>
 <span><span class="kw">for</span><span class="op">(</span><span class="va">subject</span> <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="va">n</span><span class="op">)</span></span>
 <span>  <span class="fu"><a href="https://rdrr.io/r/graphics/image.html" class="external-link">image</a></span><span class="op">(</span><span class="va">truecoef</span><span class="op">[</span><span class="va">subject</span>,,<span class="op">]</span>, main<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="st">"Subject "</span>,<span class="va">subject</span><span class="op">)</span>, </span>
 <span>         col<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/grDevices/palettes.html" class="external-link">heat.colors</a></span><span class="op">(</span><span class="fl">8</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
-<div class="figure">
+<div class="figure" style="text-align: center">
 <img src="BHMSMAfMRIvignette_files/figure-html/TrueCoef-1.png" alt="True regression coefficient images for the 3 subjects" width="1152"><p class="caption">
 True regression coefficient images for the 3 subjects
 </p>
@@ -292,14 +299,14 @@ True regression coefficient images for the 3 subjects
 and obtain the estimated regression coefficients for all the regressors
 included in <code>designmat</code> by using the function
 <code>glmcoef</code> as follows.</p>
-<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">glmmap</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/glmcoef.html">glmcoef</a></span><span class="op">(</span><span class="va">n</span>, <span class="va">grid</span>, <span class="va">data</span>, <span class="va">designmat</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/names.html" class="external-link">names</a></span><span class="op">(</span><span class="va">glmmap</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">## [1] "GLMCoefStandardized" "GLMCoefSE"</span></span></code></pre>
-<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/dim.html" class="external-link">dim</a></span><span class="op">(</span><span class="va">glmmap</span><span class="op">$</span><span class="va">GLMCoefStandardized</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">## [1]  3 32 32  2</span></span></code></pre>
-<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/dim.html" class="external-link">dim</a></span><span class="op">(</span><span class="va">glmmap</span><span class="op">$</span><span class="va">GLMCoefSE</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">## [1]  3 32 32  2</span></span></code></pre>
 <p>The output <code>glmmap</code> contains the estimated standardized
@@ -308,13 +315,13 @@ we focus on the 2<span class="math inline">\(^\text{nd}\)</span>
 regressor as the regressor of interest. Figure @ref(fig:GLMCoef),
 obtained by the following code, shows the images of its standardized
 regression coefficients estimates for the 3 subjects.</p>
-<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">k</span> <span class="op">&lt;-</span> <span class="fl">2</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/par.html" class="external-link">par</a></span><span class="op">(</span>mfrow<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="va">n</span><span class="op">)</span>, cex<span class="op">=</span><span class="fl">1</span><span class="op">)</span></span>
 <span><span class="kw">for</span><span class="op">(</span><span class="va">subject</span> <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="va">n</span><span class="op">)</span></span>
 <span>  <span class="fu"><a href="https://rdrr.io/r/graphics/image.html" class="external-link">image</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/MathFun.html" class="external-link">abs</a></span><span class="op">(</span><span class="va">glmmap</span><span class="op">$</span><span class="va">GLMCoefStandardized</span><span class="op">[</span><span class="va">subject</span>,,,<span class="va">k</span><span class="op">]</span><span class="op">)</span>, col<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/grDevices/palettes.html" class="external-link">heat.colors</a></span><span class="op">(</span><span class="fl">8</span><span class="op">)</span>,</span>
 <span>         zlim<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0</span>,<span class="fl">6</span><span class="op">)</span>, main<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="st">"Subject "</span>,<span class="va">subject</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
-<div class="figure">
+<div class="figure" style="text-align: center">
 <img src="BHMSMAfMRIvignette_files/figure-html/GLMCoef-1.png" alt="Standardized regression coefficient estimates images for the second regressor for all subjects" width="1152"><p class="caption">
 Standardized regression coefficient estimates images for the second
 regressor for all subjects
@@ -333,12 +340,12 @@ which is loaded when <strong>BHMSMAfMRI</strong> package is loaded.</p>
 <p>The function <code>waveletcoef</code> returns the wavelet
 coefficients for the selected regressor for all the subjects as a
 matrix. Below it is illustrated.</p>
-<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">wavecoefglmmap</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/waveletcoef.html">waveletcoef</a></span><span class="op">(</span><span class="va">n</span>, <span class="va">grid</span>, <span class="va">glmmap</span><span class="op">$</span><span class="va">GLMCoefStandardized</span><span class="op">[</span>,,,<span class="va">k</span><span class="op">]</span>, </span>
 <span>            wave.family<span class="op">=</span><span class="st">"DaubLeAsymm"</span>, filter.number<span class="op">=</span><span class="fl">6</span>, bc<span class="op">=</span><span class="st">"periodic"</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/names.html" class="external-link">names</a></span><span class="op">(</span><span class="va">wavecoefglmmap</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">## [1] "WaveletCoefficientMatrix"</span></span></code></pre>
-<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb22"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/dim.html" class="external-link">dim</a></span><span class="op">(</span><span class="va">wavecoefglmmap</span><span class="op">$</span><span class="va">WaveletCoefficientMatrix</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">## [1]    3 1023</span></span></code></pre>
 <p>In the wavelet transform, the user can choose the wavelet family (one
@@ -369,16 +376,16 @@ estimates and their standard error estimates. The type of analysis must
 be specified as <code>analysis="multi"</code> or <code>"single"</code>.
 The following code illustrates the use of the function
 <code>hyperparamest</code> and the output.</p>
-<div class="sourceCode" id="cb22"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb24"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/options.html" class="external-link">options</a></span><span class="op">(</span>width <span class="op">=</span> <span class="fl">100</span><span class="op">)</span></span>
 <span><span class="va">hyperest</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/hyperparamest.html">hyperparamest</a></span><span class="op">(</span><span class="va">n</span>, <span class="va">grid</span>, <span class="va">wavecoefglmmap</span><span class="op">$</span><span class="va">WaveletCoefficientMatrix</span>, </span>
 <span>                           analysis <span class="op">=</span> <span class="st">"multi"</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/names.html" class="external-link">names</a></span><span class="op">(</span><span class="va">hyperest</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">## [1] "hyperparam"    "hyperparamVar"</span></span></code></pre>
-<div class="sourceCode" id="cb24"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb26"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Round.html" class="external-link">round</a></span><span class="op">(</span><span class="va">hyperest</span><span class="op">$</span><span class="va">hyperparam</span>,<span class="fl">3</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">## [1] 1.295 1.193 0.617 0.814 2.242 0.204</span></span></code></pre>
-<div class="sourceCode" id="cb26"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb28"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Round.html" class="external-link">signif</a></span><span class="op">(</span><span class="va">hyperest</span><span class="op">$</span><span class="va">hyperparamVar</span>,<span class="fl">4</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">##            [,1]       [,2]       [,3]       [,4]       [,5]       [,6]</span></span>
 <span><span class="co">## [1,]  5.085e-19  2.002e-34 -5.642e-35 -1.241e-35  1.368e-34  5.295e-35</span></span>
@@ -390,7 +397,7 @@ The following code illustrates the use of the function
 <p>From the hyperparameter estimates, we can compute the estimates of
 <span class="math inline">\(a_{kl}\)</span>, <span class="math inline">\(b_{kl}\)</span> and <span class="math inline">\(c_{kl}\)</span> <span class="citation">(Sanyal and
 Ferreira 2012)</span> for all levels as follows.</p>
-<div class="sourceCode" id="cb28"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb30"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">a.kl</span> <span class="op">&lt;-</span> <span class="va">hyperest</span><span class="op">$</span><span class="va">hyperparam</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span> <span class="op">*</span> <span class="fl">2</span><span class="op">^</span><span class="op">(</span><span class="op">-</span><span class="va">hyperest</span><span class="op">$</span><span class="va">hyperparam</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span> <span class="op">*</span> <span class="op">(</span><span class="fl">0</span><span class="op">:</span><span class="fl">4</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="va">b.kl</span> <span class="op">&lt;-</span> <span class="va">hyperest</span><span class="op">$</span><span class="va">hyperparam</span><span class="op">[</span><span class="fl">3</span><span class="op">]</span> <span class="op">*</span> <span class="fl">2</span><span class="op">^</span><span class="op">(</span><span class="op">-</span><span class="va">hyperest</span><span class="op">$</span><span class="va">hyperparam</span><span class="op">[</span><span class="fl">4</span><span class="op">]</span> <span class="op">*</span> <span class="op">(</span><span class="fl">0</span><span class="op">:</span><span class="fl">4</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="va">c.kl</span> <span class="op">&lt;-</span> <span class="va">hyperest</span><span class="op">$</span><span class="va">hyperparam</span><span class="op">[</span><span class="fl">5</span><span class="op">]</span> <span class="op">*</span> <span class="fl">2</span><span class="op">^</span><span class="op">(</span><span class="op">-</span><span class="va">hyperest</span><span class="op">$</span><span class="va">hyperparam</span><span class="op">[</span><span class="fl">6</span><span class="op">]</span> <span class="op">*</span> <span class="op">(</span><span class="fl">0</span><span class="op">:</span><span class="fl">4</span><span class="op">)</span><span class="op">)</span></span>
@@ -408,15 +415,15 @@ numerical integration method. The function <code>postmixprob</code>
 computes the values <span class="math inline">\(\bar{p}_{iklj}\)</span>
 for all subjects and returns in a matrix. The following code illustrates
 it.</p>
-<div class="sourceCode" id="cb30"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb32"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">pkljbar</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/postmixprob.html">postmixprob</a></span><span class="op">(</span><span class="va">n</span>, <span class="va">grid</span>, <span class="va">wavecoefglmmap</span><span class="op">$</span><span class="va">WaveletCoefficientMatrix</span>, </span>
 <span>                        <span class="va">hyperest</span><span class="op">$</span><span class="va">hyperparam</span>, analysis <span class="op">=</span> <span class="st">"multi"</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/names.html" class="external-link">names</a></span><span class="op">(</span><span class="va">pkljbar</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">## [1] "pkljbar"</span></span></code></pre>
-<div class="sourceCode" id="cb32"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb34"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/dim.html" class="external-link">dim</a></span><span class="op">(</span><span class="va">pkljbar</span><span class="op">$</span><span class="va">pkljbar</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">## [1]    3 1023</span></span></code></pre>
-<div class="sourceCode" id="cb34"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb36"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Round.html" class="external-link">round</a></span><span class="op">(</span><span class="va">pkljbar</span><span class="op">$</span><span class="va">pkljbar</span><span class="op">[</span><span class="fl">1</span>,<span class="fl">1</span><span class="op">:</span><span class="fl">10</span><span class="op">]</span>,<span class="fl">4</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">##  [1] 0.9868 0.9115 0.9466 0.9095 0.9174 0.9237 0.8922 0.8911 0.9998 0.9599</span></span></code></pre>
 <p>Once <span class="math inline">\(\bar{p}_{iklj}\)</span> values are
@@ -426,16 +433,16 @@ the <span class="math inline">\(\bar{p}_{iklj}\)</span> values, the
 function <code>postwaveletcoef</code> computes the posterior mean and
 the posterior median of the wavelet coefficients. The following code
 illustrates it.</p>
-<div class="sourceCode" id="cb36"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb38"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">postwavecoefglmmap</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/postwaveletcoef.html">postwaveletcoef</a></span><span class="op">(</span><span class="va">n</span>, <span class="va">grid</span>, </span>
 <span>                         <span class="va">wavecoefglmmap</span><span class="op">$</span><span class="va">WaveletCoefficientMatrix</span>, </span>
 <span>                 <span class="va">hyperest</span><span class="op">$</span><span class="va">hyperparam</span>, <span class="va">pkljbar</span><span class="op">$</span><span class="va">pkljbar</span>, analysis <span class="op">=</span> <span class="st">"multi"</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/names.html" class="external-link">names</a></span><span class="op">(</span><span class="va">postwavecoefglmmap</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">## [1] "PostMeanWaveletCoeff"   "PostMedianWaveletCoeff"</span></span></code></pre>
-<div class="sourceCode" id="cb38"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb40"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/dim.html" class="external-link">dim</a></span><span class="op">(</span><span class="va">postwavecoefglmmap</span><span class="op">$</span><span class="va">PostMeanWaveletCoef</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">## [1]    3 1023</span></span></code></pre>
-<div class="sourceCode" id="cb40"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb42"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/dim.html" class="external-link">dim</a></span><span class="op">(</span><span class="va">postwavecoefglmmap</span><span class="op">$</span><span class="va">PostMedianWaveletCoeff</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">## [1]    3 1023</span></span></code></pre>
 </div>
@@ -446,19 +453,19 @@ illustrates it.</p>
 <p>Given the posterior mean of the wavelet coefficients, the function
 <code>postglmcoef</code> is used to obtain the posterior means of the
 regression coefficients. The following code shows its use.</p>
-<div class="sourceCode" id="cb42"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb44"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">postglmmap</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/postglmcoef.html">postglmcoef</a></span><span class="op">(</span><span class="va">n</span>, <span class="va">grid</span>, <span class="va">glmmap</span><span class="op">$</span><span class="va">GLMCoefStandardized</span><span class="op">[</span>,,,<span class="va">k</span><span class="op">]</span>, </span>
 <span>         <span class="va">postwavecoefglmmap</span><span class="op">$</span><span class="va">PostMeanWaveletCoef</span>, wave.family<span class="op">=</span><span class="st">"DaubLeAsymm"</span>, </span>
 <span>           filter.number<span class="op">=</span><span class="fl">6</span>, bc<span class="op">=</span><span class="st">"periodic"</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/str.html" class="external-link">str</a></span><span class="op">(</span><span class="va">postglmmap</span>,vec.len <span class="op">=</span> <span class="fl">3</span>, digits.d <span class="op">=</span> <span class="fl">2</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">## List of 1</span></span>
 <span><span class="co">##  $ GLMcoefposterior: num [1:3, 1:32, 1:32] -0.36 -0.188 -0.014 0.231 ...</span></span></code></pre>
-<div class="sourceCode" id="cb44"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb46"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/par.html" class="external-link">par</a></span><span class="op">(</span>mfrow<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="va">n</span><span class="op">)</span>, cex<span class="op">=</span><span class="fl">1</span><span class="op">)</span></span>
 <span><span class="kw">for</span><span class="op">(</span><span class="va">subject</span> <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="va">n</span><span class="op">)</span></span>
 <span>  <span class="fu"><a href="https://rdrr.io/r/graphics/image.html" class="external-link">image</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/MathFun.html" class="external-link">abs</a></span><span class="op">(</span><span class="va">postglmmap</span><span class="op">$</span><span class="va">GLMcoefposterior</span><span class="op">[</span><span class="va">subject</span>,,<span class="op">]</span><span class="op">)</span>, col<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/grDevices/palettes.html" class="external-link">heat.colors</a></span><span class="op">(</span><span class="fl">8</span><span class="op">)</span>,</span>
 <span>         zlim<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0</span>,<span class="fl">6</span><span class="op">)</span>, main<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="st">"Subject "</span>,<span class="va">subject</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
-<div class="figure">
+<div class="figure" style="text-align: center">
 <img src="BHMSMAfMRIvignette_files/figure-html/PostCoef-1.png" alt="Posterior standardized regression coefficient images for the 3 subjects obtained by BHMSMA" width="1152"><p class="caption">
 Posterior standardized regression coefficient images for the 3 subjects
 obtained by BHMSMA
@@ -469,7 +476,7 @@ images of the posterior standardized regression coefficients for the 3
 subjects.</p>
 <p>As the true coefficients are known, we can compute the mean squared
 error (MSE) using the following code.</p>
-<div class="sourceCode" id="cb45"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb47"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">MSE</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="kw">for</span> <span class="op">(</span><span class="va">i</span> <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="va">n</span><span class="op">)</span> </span>
 <span> <span class="va">MSE</span><span class="op">[</span><span class="va">i</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html" class="external-link">sum</a></span><span class="op">(</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/vector.html" class="external-link">as.vector</a></span><span class="op">(</span><span class="va">truecoef</span><span class="op">[</span><span class="va">i</span>,,<span class="op">]</span><span class="op">/</span><span class="va">glmmap</span><span class="op">$</span><span class="va">GLMCoefSE</span><span class="op">[</span><span class="va">i</span>,,,<span class="fl">2</span><span class="op">]</span><span class="op">)</span>  </span>
@@ -488,16 +495,16 @@ methodologies in terms of MSE.</p>
 the regression coefficients, the function <code>postsamples</code> can
 be used. The type of analysis must be mentioned. The code below shows
 its use.</p>
-<div class="sourceCode" id="cb47"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb49"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">Postsamp</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/postsamples.html">postsamples</a></span><span class="op">(</span> nsample<span class="op">=</span><span class="fl">50</span>, <span class="va">n</span>, <span class="va">grid</span>, <span class="va">glmmap</span><span class="op">$</span><span class="va">GLMCoefStandardized</span><span class="op">[</span>,,,<span class="va">k</span><span class="op">]</span>,</span>
 <span>               <span class="va">wavecoefglmmap</span><span class="op">$</span><span class="va">WaveletCoefficientMatrix</span>,  <span class="va">hyperest</span><span class="op">$</span><span class="va">hyperparam</span>, </span>
 <span>               <span class="va">pkljbar</span><span class="op">$</span><span class="va">pkljbar</span>, <span class="st">"multi"</span>, seed<span class="op">=</span><span class="fl">123</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/names.html" class="external-link">names</a></span><span class="op">(</span><span class="va">Postsamp</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">## [1] "samples"       "postdiscovery"</span></span></code></pre>
-<div class="sourceCode" id="cb49"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb51"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/dim.html" class="external-link">dim</a></span><span class="op">(</span><span class="va">Postsamp</span><span class="op">$</span><span class="va">samples</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">## [1]  3 32 32 50</span></span></code></pre>
-<div class="sourceCode" id="cb51"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb53"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/dim.html" class="external-link">dim</a></span><span class="op">(</span><span class="va">Postsamp</span><span class="op">$</span><span class="va">postdiscovery</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">## [1]  3 32 32</span></span></code></pre>
 <p>The argument <code>nsample</code> denotes the number of samples to be
@@ -506,19 +513,19 @@ and the probabilities of posterior discovery <span class="citation">(Morris et a
 Figure @ref(fig:PostDiscovery), obtained by the following code, shows
 the posterior discovery images based on the above 50 samples for the 3
 subjects.</p>
-<div class="sourceCode" id="cb53"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/par.html" class="external-link">par</a></span><span class="op">(</span>mfrow<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="va">n</span><span class="op">)</span><span class="op">)</span></span>
+<div class="sourceCode" id="cb55"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/par.html" class="external-link">par</a></span><span class="op">(</span>mfrow<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="va">n</span><span class="op">)</span>, cex<span class="op">=</span><span class="fl">1</span><span class="op">)</span></span>
 <span><span class="kw">for</span><span class="op">(</span><span class="va">subject</span> <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="va">n</span><span class="op">)</span></span>
 <span>  <span class="fu"><a href="https://rdrr.io/r/graphics/image.html" class="external-link">image</a></span><span class="op">(</span><span class="va">Postsamp</span><span class="op">$</span><span class="va">postdiscovery</span><span class="op">[</span><span class="va">subject</span>,,<span class="op">]</span>, col<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/grDevices/palettes.html" class="external-link">heat.colors</a></span><span class="op">(</span><span class="fl">8</span><span class="op">)</span>,</span>
 <span>   main<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="st">"Subject "</span>,<span class="va">subject</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
-<div class="figure">
+<div class="figure" style="text-align: center">
 <img src="BHMSMAfMRIvignette_files/figure-html/PostDiscovery-1.png" alt="Posterior discovery images for the 3 subjects" width="1152"><p class="caption">
 Posterior discovery images for the 3 subjects
 </p>
 </div>
 <p>From the posterior samples, the posterior standard deviations of the
 regression coefficients can be computed as follows.</p>
-<div class="sourceCode" id="cb54"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb56"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">postsd</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/array.html" class="external-link">array</a></span><span class="op">(</span>dim<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="va">n</span>,<span class="va">grid</span>,<span class="va">grid</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="kw">for</span><span class="op">(</span><span class="va">subject</span> <span class="kw">in</span> <span class="fl">1</span><span class="op">:</span><span class="va">n</span><span class="op">)</span></span>
 <span> <span class="va">postsd</span><span class="op">[</span><span class="va">subject</span>,,<span class="op">]</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/apply.html" class="external-link">apply</a></span><span class="op">(</span><span class="va">Postsamp</span><span class="op">$</span><span class="va">samples</span><span class="op">[</span><span class="va">subject</span>,,,<span class="op">]</span>, <span class="fl">1</span><span class="op">:</span><span class="fl">2</span>, <span class="va">sd</span><span class="op">)</span></span>
@@ -535,21 +542,21 @@ regression coefficients can be computed as follows.</p>
 </h3>
 <p>Posterior group coefficients can be obtained by using the function
 <code>postgroupglmcoef</code> as follows.</p>
-<div class="sourceCode" id="cb56"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb58"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">postgroup</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/postgroupglmcoef.html">postgroupglmcoef</a></span><span class="op">(</span> <span class="va">n</span>, <span class="va">grid</span>, <span class="va">glmmap</span><span class="op">$</span><span class="va">GLMCoefStandardized</span><span class="op">[</span>,,,<span class="va">k</span><span class="op">]</span>, </span>
 <span>                               <span class="va">postwavecoefglmmap</span><span class="op">$</span><span class="va">PostMeanWaveletCoef</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/names.html" class="external-link">names</a></span><span class="op">(</span><span class="va">postgroup</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">## [1] "groupcoef"</span></span></code></pre>
-<div class="sourceCode" id="cb58"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb60"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/dim.html" class="external-link">dim</a></span><span class="op">(</span><span class="va">postgroup</span><span class="op">$</span><span class="va">groupcoef</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">## [1] 32 32</span></span></code></pre>
 <p>Figure @ref(fig:PostGroupCoef), obtained by the following code, shows
 the posterior group coefficient image for the simulated dataset.</p>
-<div class="sourceCode" id="cb60"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb62"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/par.html" class="external-link">par</a></span><span class="op">(</span>mfrow<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">1</span><span class="op">)</span>,cex<span class="op">=</span><span class="fl">0.5</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/image.html" class="external-link">image</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/MathFun.html" class="external-link">abs</a></span><span class="op">(</span><span class="va">postgroup</span><span class="op">$</span><span class="va">groupcoef</span><span class="op">)</span>,col<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/grDevices/palettes.html" class="external-link">heat.colors</a></span><span class="op">(</span><span class="fl">8</span><span class="op">)</span>,zlim<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0</span>,<span class="fl">6</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <div class="figure" style="text-align: center">
-<img src="BHMSMAfMRIvignette_files/figure-html/PostGroupCoef-1.png" alt="Posterior group regression coefficient image" width="288"><p class="caption">
+<img src="BHMSMAfMRIvignette_files/figure-html/PostGroupCoef-1.png" alt="Posterior group regression coefficient image" width="240"><p class="caption">
 Posterior group regression coefficient image
 </p>
 </div>
