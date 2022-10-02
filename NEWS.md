@@ -1,4 +1,14 @@
-# BHMSMAfMRI 2.0
+
+# BHMSMAfMRI v2.1 
+
+* Changed package URL.
+
+* Added welcome message.
+
+* Added NEWS file properly.
+
+
+# BHMSMAfMRI v2.0
 
 * Major computational upgrade: The core computational parts of most of the functions were written in C++ using Rcpp and RcppArmadillo libraries. This led to a major boost in computational speed.
 
