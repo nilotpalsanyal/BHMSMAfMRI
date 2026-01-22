@@ -6,27 +6,24 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>`BHMSMAfMRI` User Guide • BHMSMAfMRI</title>
-<!-- favicons --><link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
-<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="../apple-touch-icon.png">
-<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="../apple-touch-icon-120x120.png">
-<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="../apple-touch-icon-76x76.png">
-<link rel="apple-touch-icon" type="image/png" sizes="60x60" href="../apple-touch-icon-60x60.png">
-<!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous">
+<!-- favicons --><link rel="icon" type="image/png" sizes="48x48" href="../favicon-48x48.png">
+<link rel="icon" type="”image/svg+xml”" href="../favicon.svg">
+<link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+<link rel="icon" sizes="any" href="../favicon.ico">
+<link rel="manifest" href="../site.webmanifest">
+<!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- bootstrap-toc --><link rel="stylesheet" href="../bootstrap-toc.css">
 <script src="../bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
 <script src="../pkgdown.js"></script><meta property="og:title" content="`BHMSMAfMRI` User Guide">
-<meta property="og:description" content="BHMSMAfMRI">
-<meta property="og:image" content="/logo.png">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
 </head>
 <body data-spy="scroll" data-target="#toc">
-    
+
 
     <div class="container template-article">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -40,19 +37,22 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">BHMSMAfMRI</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">2.3</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
 <li>
+  <a href="../articles/BHMSMAfMRI.html">Get started</a>
+</li>
+<li>
   <a href="../reference/index.html">Reference</a>
 </li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Articles
-     
+
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu">
@@ -69,7 +69,7 @@
 <li>
   <a href="https://github.com/nilotpalsanyal/BHMSMAfMRI/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
-     
+
   </a>
 </li>
       </ul>
@@ -80,7 +80,7 @@
 </div>
 <!--/.navbar -->
 
-      
+
 
       </header><div class="row">
   <div class="col-md-9 contents">
@@ -90,7 +90,7 @@
                         <h4 data-toc-skip class="author">Nilotpal
 Sanyal</h4>
             
-            <h4 data-toc-skip class="date">October 02, 2022</h4>
+            <h4 data-toc-skip class="date">January 22, 2026</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/nilotpalsanyal/BHMSMAfMRI/blob/HEAD/vignettes/BHMSMAfMRIvignette.Rmd" class="external-link"><code>vignettes/BHMSMAfMRIvignette.Rmd</code></a></small>
       <div class="hidden name"><code>BHMSMAfMRIvignette.Rmd</code></div>
@@ -107,7 +107,7 @@ Sanyal</h4>
 options(width = 200)
 ```
  -->
-<p><span class="math inline">\(\hspace{5cm}\)</span></p>
+<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mspace width="11.905em"></mspace><annotation encoding="application/x-tex">\hspace{5cm}</annotation></semantics></math></p>
 <p>Welcome to <strong>BHMSMAfMRI</strong>, an R package to analyze
 functional MRI (fMRI) data, or other multiscale data. This manual shows
 how the <strong>BHMSMAfMRI</strong> package functions are used to
@@ -198,13 +198,13 @@ estimates of the wavelet coefficients and finally
 regression coefficient map. If true coefficients are given,
 <code>BHMSMA</code> also returns mean squared error (MSE) estimates.
 Here is a quick look at the usage and outputs of the function.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(BHMSMAfMRI)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>BHMSMAmulti <span class="ot">&lt;-</span> <span class="fu">BHMSMA</span>(n, grid, data, designmat, k, <span class="st">"multi"</span>, truecoef)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(BHMSMAmulti)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>[<span class="dv">1</span>] <span class="st">"GLMCoefStandardized"</span>      <span class="st">"GLMCoefSE"</span>               </span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>[<span class="dv">3</span>] <span class="st">"WaveletCoefficientMatrix"</span> <span class="st">"hyperparam"</span>              </span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>[<span class="dv">5</span>] <span class="st">"hyperparamVar"</span>            <span class="st">"posteriorMixProb"</span>        </span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>[<span class="dv">7</span>] <span class="st">"Waveletcoefposterior"</span>     <span class="st">"GLMcoefposterior"</span></span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">library</span>(BHMSMAfMRI)</span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a>BHMSMAmulti <span class="ot">&lt;-</span> <span class="fu">BHMSMA</span>(n, grid, data, designmat, k, <span class="st">"multi"</span>, truecoef)</span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a><span class="fu">names</span>(BHMSMAmulti)</span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a>[<span class="dv">1</span>] <span class="st">"GLMCoefStandardized"</span>      <span class="st">"GLMCoefSE"</span>               </span>
+<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a>[<span class="dv">3</span>] <span class="st">"WaveletCoefficientMatrix"</span> <span class="st">"hyperparam"</span>              </span>
+<span id="cb1-6"><a href="#cb1-6" tabindex="-1"></a>[<span class="dv">5</span>] <span class="st">"hyperparamVar"</span>            <span class="st">"posteriorMixProb"</span>        </span>
+<span id="cb1-7"><a href="#cb1-7" tabindex="-1"></a>[<span class="dv">7</span>] <span class="st">"Waveletcoefposterior"</span>     <span class="st">"GLMcoefposterior"</span></span></code></pre></div>
 <p>The dimension of <code>data</code> is
 <code>c(n,grid,grid,ntime)</code> where <code>n</code> is the number of
 sujects, <code>grid^2</code> is the total number of voxels in the data
@@ -226,11 +226,13 @@ the fMRI data files is done using R package <strong>oro.nifti</strong>
 which is loaded when <strong>BHMSMAfMRI</strong> package is loaded.</p>
 <p>For illustration, we consider a simulated fMRI dataset stored in
 ANALYZE format and provided within the <strong>BHMSMAfMRI</strong>
-package. The dataset contains noisy fMRI data collected over a <span class="math inline">\(32 \times 32\)</span> grid of a single axial brain
-slice and at 9 timepoints for 3 subjects. The following code illustrates
-how the function <code>readfmridata</code> can be used to import the
-data from the image files. The simulated dataset is extracted in the
-directory <code>fmridata</code> within the R temporary folder.</p>
+package. The dataset contains noisy fMRI data collected over a
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>32</mn><mo>×</mo><mn>32</mn></mrow><annotation encoding="application/x-tex">32 \times 32</annotation></semantics></math>
+grid of a single axial brain slice and at 9 timepoints for 3 subjects.
+The following code illustrates how the function
+<code>readfmridata</code> can be used to import the data from the image
+files. The simulated dataset is extracted in the directory
+<code>fmridata</code> within the R temporary folder.</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://nilotpalsanyal.github.io/BHMSMAfMRI/" class="external-link">BHMSMAfMRI</a></span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">## </span></span>
@@ -286,7 +288,7 @@ is the design matrix used to generate the data. Note that, the R package
 <span>  <span class="fu"><a href="https://rdrr.io/r/graphics/image.html" class="external-link">image</a></span><span class="op">(</span><span class="va">truecoef</span><span class="op">[</span><span class="va">subject</span>,,<span class="op">]</span>, main<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="st">"Subject "</span>,<span class="va">subject</span><span class="op">)</span>, </span>
 <span>         col<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/grDevices/palettes.html" class="external-link">heat.colors</a></span><span class="op">(</span><span class="fl">8</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <div class="figure" style="text-align: center">
-<img src="BHMSMAfMRIvignette_files/figure-html/TrueCoef-1.png" alt="True regression coefficient images for the 3 subjects" width="1152"><p class="caption">
+<img src="BHMSMAfMRIvignette_files/figure-html/TrueCoef-1.png" class="r-plt" alt="True regression coefficient images for the 3 subjects" width="1152"><p class="caption">
 True regression coefficient images for the 3 subjects
 </p>
 </div>
@@ -310,7 +312,8 @@ included in <code>designmat</code> by using the function
 <pre><code><span><span class="co">## [1]  3 32 32  2</span></span></code></pre>
 <p>The output <code>glmmap</code> contains the estimated standardized
 regression coefficients and their standard error estimates. From now on,
-we focus on the 2<span class="math inline">\(^\text{nd}\)</span>
+we focus on the
+2<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi></mi><mtext mathvariant="normal">nd</mtext></msup><annotation encoding="application/x-tex">^\text{nd}</annotation></semantics></math>
 regressor as the regressor of interest. Figure @ref(fig:GLMCoef),
 obtained by the following code, shows the images of its standardized
 regression coefficients estimates for the 3 subjects.</p>
@@ -321,7 +324,7 @@ regression coefficients estimates for the 3 subjects.</p>
 <span>  <span class="fu"><a href="https://rdrr.io/r/graphics/image.html" class="external-link">image</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/MathFun.html" class="external-link">abs</a></span><span class="op">(</span><span class="va">glmmap</span><span class="op">$</span><span class="va">GLMCoefStandardized</span><span class="op">[</span><span class="va">subject</span>,,,<span class="va">k</span><span class="op">]</span><span class="op">)</span>, col<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/grDevices/palettes.html" class="external-link">heat.colors</a></span><span class="op">(</span><span class="fl">8</span><span class="op">)</span>,</span>
 <span>         zlim<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0</span>,<span class="fl">6</span><span class="op">)</span>, main<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="st">"Subject "</span>,<span class="va">subject</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <div class="figure" style="text-align: center">
-<img src="BHMSMAfMRIvignette_files/figure-html/GLMCoef-1.png" alt="Standardized regression coefficient estimates images for the second regressor for all subjects" width="1152"><p class="caption">
+<img src="BHMSMAfMRIvignette_files/figure-html/GLMCoef-1.png" class="r-plt" alt="Standardized regression coefficient estimates images for the second regressor for all subjects" width="1152"><p class="caption">
 Standardized regression coefficient estimates images for the second
 regressor for all subjects
 </p>
@@ -387,15 +390,18 @@ The following code illustrates the use of the function
 <div class="sourceCode" id="cb28"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Round.html" class="external-link">signif</a></span><span class="op">(</span><span class="va">hyperest</span><span class="op">$</span><span class="va">hyperparamVar</span>,<span class="fl">4</span><span class="op">)</span></span></code></pre></div>
 <pre><code><span><span class="co">##            [,1]       [,2]       [,3]       [,4]       [,5]       [,6]</span></span>
-<span><span class="co">## [1,]  5.085e-19  2.002e-34 -5.642e-35 -1.241e-35  1.368e-34  5.295e-35</span></span>
-<span><span class="co">## [2,]  2.002e-34  4.319e-19 -1.040e-34  1.143e-35  4.097e-34  2.583e-35</span></span>
-<span><span class="co">## [3,] -5.642e-35 -1.040e-34  1.153e-19  5.909e-36 -8.143e-35 -3.115e-35</span></span>
-<span><span class="co">## [4,] -1.241e-35  1.143e-35  5.909e-36  2.008e-19 -6.876e-34  1.957e-35</span></span>
-<span><span class="co">## [5,]  1.368e-34  4.097e-34 -8.143e-35 -6.876e-34  1.525e-18 -5.394e-36</span></span>
-<span><span class="co">## [6,]  5.295e-35  2.583e-35 -3.115e-35  1.957e-35 -5.394e-36  1.265e-20</span></span></code></pre>
+<span><span class="co">## [1,]  5.085e-19 -1.274e-34  1.222e-34  7.444e-35 -6.839e-35 -3.114e-36</span></span>
+<span><span class="co">## [2,] -1.274e-34  4.319e-19  6.066e-35  2.515e-34 -4.075e-49 -5.453e-35</span></span>
+<span><span class="co">## [3,]  1.222e-34  6.066e-35  1.153e-19 -2.364e-35  3.257e-35  1.483e-36</span></span>
+<span><span class="co">## [4,]  7.444e-35  2.515e-34 -2.364e-35  2.008e-19 -4.082e-34 -1.174e-35</span></span>
+<span><span class="co">## [5,] -6.839e-35 -4.075e-49  3.257e-35 -4.082e-34  1.525e-18 -1.618e-35</span></span>
+<span><span class="co">## [6,] -3.114e-36 -5.453e-35  1.483e-36 -1.174e-35 -1.618e-35  1.265e-20</span></span></code></pre>
 <p>From the hyperparameter estimates, we can compute the estimates of
-<span class="math inline">\(a_{kl}\)</span>, <span class="math inline">\(b_{kl}\)</span> and <span class="math inline">\(c_{kl}\)</span> <span class="citation">(Sanyal and
-Ferreira 2012)</span> for all levels as follows.</p>
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>a</mi><mrow><mi>k</mi><mi>l</mi></mrow></msub><annotation encoding="application/x-tex">a_{kl}</annotation></semantics></math>,
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>b</mi><mrow><mi>k</mi><mi>l</mi></mrow></msub><annotation encoding="application/x-tex">b_{kl}</annotation></semantics></math>
+and
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>c</mi><mrow><mi>k</mi><mi>l</mi></mrow></msub><annotation encoding="application/x-tex">c_{kl}</annotation></semantics></math><span class="citation">(Sanyal and Ferreira 2012)</span> for all levels
+as follows.</p>
 <div class="sourceCode" id="cb30"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">a.kl</span> <span class="op">&lt;-</span> <span class="va">hyperest</span><span class="op">$</span><span class="va">hyperparam</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span> <span class="op">*</span> <span class="fl">2</span><span class="op">^</span><span class="op">(</span><span class="op">-</span><span class="va">hyperest</span><span class="op">$</span><span class="va">hyperparam</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span> <span class="op">*</span> <span class="op">(</span><span class="fl">0</span><span class="op">:</span><span class="fl">4</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="va">b.kl</span> <span class="op">&lt;-</span> <span class="va">hyperest</span><span class="op">$</span><span class="va">hyperparam</span><span class="op">[</span><span class="fl">3</span><span class="op">]</span> <span class="op">*</span> <span class="fl">2</span><span class="op">^</span><span class="op">(</span><span class="op">-</span><span class="va">hyperest</span><span class="op">$</span><span class="va">hyperparam</span><span class="op">[</span><span class="fl">4</span><span class="op">]</span> <span class="op">*</span> <span class="op">(</span><span class="fl">0</span><span class="op">:</span><span class="fl">4</span><span class="op">)</span><span class="op">)</span></span>
@@ -409,9 +415,13 @@ Ferreira 2012)</span> for all levels as follows.</p>
 </h3>
 <p>Given the values of the hyperparameters, the marginal posterior
 distribution of the wavelet coefficients is a mixture of a Gaussian and
-a point mass at zero with mixture probabilities <span class="math inline">\(\bar{p}_{iklj}\)</span>. BHMSMA computes <span class="math inline">\(\bar{p}_{iklj}\)</span> values using Newton-Cotes
-numerical integration method. The function <code>postmixprob</code>
-computes the values <span class="math inline">\(\bar{p}_{iklj}\)</span>
+a point mass at zero with mixture probabilities
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mover><mi>p</mi><mo accent="true">‾</mo></mover><mrow><mi>i</mi><mi>k</mi><mi>l</mi><mi>j</mi></mrow></msub><annotation encoding="application/x-tex">\bar{p}_{iklj}</annotation></semantics></math>.
+BHMSMA computes
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mover><mi>p</mi><mo accent="true">‾</mo></mover><mrow><mi>i</mi><mi>k</mi><mi>l</mi><mi>j</mi></mrow></msub><annotation encoding="application/x-tex">\bar{p}_{iklj}</annotation></semantics></math>
+values using Newton-Cotes numerical integration method. The function
+<code>postmixprob</code> computes the values
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mover><mi>p</mi><mo accent="true">‾</mo></mover><mrow><mi>i</mi><mi>k</mi><mi>l</mi><mi>j</mi></mrow></msub><annotation encoding="application/x-tex">\bar{p}_{iklj}</annotation></semantics></math>
 for all subjects and returns in a matrix. The following code illustrates
 it.</p>
 <div class="sourceCode" id="cb32"><pre class="downlit sourceCode r">
@@ -424,14 +434,16 @@ it.</p>
 <pre><code><span><span class="co">## [1]    3 1023</span></span></code></pre>
 <div class="sourceCode" id="cb36"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Round.html" class="external-link">round</a></span><span class="op">(</span><span class="va">pkljbar</span><span class="op">$</span><span class="va">pkljbar</span><span class="op">[</span><span class="fl">1</span>,<span class="fl">1</span><span class="op">:</span><span class="fl">10</span><span class="op">]</span>,<span class="fl">4</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">##  [1] 0.9868 0.9115 0.9466 0.9095 0.9174 0.9237 0.8922 0.8911 0.9998 0.9599</span></span></code></pre>
-<p>Once <span class="math inline">\(\bar{p}_{iklj}\)</span> values are
-obtained, the marginal posterior distribution of the wavelet
+<pre><code><span><span class="co">##  [1] 0.9868 0.9115 0.9466 0.9095 0.9173 0.9237 0.8922 0.8911 0.9998 0.9599</span></span></code></pre>
+<p>Once
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mover><mi>p</mi><mo accent="true">‾</mo></mover><mrow><mi>i</mi><mi>k</mi><mi>l</mi><mi>j</mi></mrow></msub><annotation encoding="application/x-tex">\bar{p}_{iklj}</annotation></semantics></math>
+values are obtained, the marginal posterior distribution of the wavelet
 coefficients are entirely known. With the hyperparameter estimates and
-the <span class="math inline">\(\bar{p}_{iklj}\)</span> values, the
-function <code>postwaveletcoef</code> computes the posterior mean and
-the posterior median of the wavelet coefficients. The following code
-illustrates it.</p>
+the
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mover><mi>p</mi><mo accent="true">‾</mo></mover><mrow><mi>i</mi><mi>k</mi><mi>l</mi><mi>j</mi></mrow></msub><annotation encoding="application/x-tex">\bar{p}_{iklj}</annotation></semantics></math>
+values, the function <code>postwaveletcoef</code> computes the posterior
+mean and the posterior median of the wavelet coefficients. The following
+code illustrates it.</p>
 <div class="sourceCode" id="cb38"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">postwavecoefglmmap</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/postwaveletcoef.html">postwaveletcoef</a></span><span class="op">(</span><span class="va">n</span>, <span class="va">grid</span>, </span>
 <span>                         <span class="va">wavecoefglmmap</span><span class="op">$</span><span class="va">WaveletCoefficientMatrix</span>, </span>
@@ -465,7 +477,7 @@ regression coefficients. The following code shows its use.</p>
 <span>  <span class="fu"><a href="https://rdrr.io/r/graphics/image.html" class="external-link">image</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/MathFun.html" class="external-link">abs</a></span><span class="op">(</span><span class="va">postglmmap</span><span class="op">$</span><span class="va">GLMcoefposterior</span><span class="op">[</span><span class="va">subject</span>,,<span class="op">]</span><span class="op">)</span>, col<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/grDevices/palettes.html" class="external-link">heat.colors</a></span><span class="op">(</span><span class="fl">8</span><span class="op">)</span>,</span>
 <span>         zlim<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0</span>,<span class="fl">6</span><span class="op">)</span>, main<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="st">"Subject "</span>,<span class="va">subject</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <div class="figure" style="text-align: center">
-<img src="BHMSMAfMRIvignette_files/figure-html/PostCoef-1.png" alt="Posterior standardized regression coefficient images for the 3 subjects obtained by BHMSMA" width="1152"><p class="caption">
+<img src="BHMSMAfMRIvignette_files/figure-html/PostCoef-1.png" class="r-plt" alt="Posterior standardized regression coefficient images for the 3 subjects obtained by BHMSMA" width="1152"><p class="caption">
 Posterior standardized regression coefficient images for the 3 subjects
 obtained by BHMSMA
 </p>
@@ -481,7 +493,7 @@ error (MSE) using the following code.</p>
 <span> <span class="va">MSE</span><span class="op">[</span><span class="va">i</span><span class="op">]</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html" class="external-link">sum</a></span><span class="op">(</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/vector.html" class="external-link">as.vector</a></span><span class="op">(</span><span class="va">truecoef</span><span class="op">[</span><span class="va">i</span>,,<span class="op">]</span><span class="op">/</span><span class="va">glmmap</span><span class="op">$</span><span class="va">GLMCoefSE</span><span class="op">[</span><span class="va">i</span>,,,<span class="fl">2</span><span class="op">]</span><span class="op">)</span>  </span>
 <span>                <span class="op">-</span> <span class="fu"><a href="https://rdrr.io/r/base/vector.html" class="external-link">as.vector</a></span><span class="op">(</span><span class="va">postglmmap</span><span class="op">$</span><span class="va">GLMcoefposterior</span><span class="op">[</span><span class="va">i</span>,,<span class="op">]</span><span class="op">)</span><span class="op">)</span><span class="op">^</span><span class="fl">2</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/Round.html" class="external-link">round</a></span><span class="op">(</span><span class="va">MSE</span>,<span class="fl">3</span><span class="op">)</span></span></code></pre></div>
-<pre><code><span><span class="co">## [1] 446.322 309.666 306.514</span></span></code></pre>
+<pre><code><span><span class="co">## [1] 446.322 309.666 306.513</span></span></code></pre>
 <p>In <span class="citation">(Sanyal and Ferreira 2012)</span>, we show
 that our multi-subject methodology performs better than some existing
 methodologies in terms of MSE.</p>
@@ -518,7 +530,7 @@ subjects.</p>
 <span>  <span class="fu"><a href="https://rdrr.io/r/graphics/image.html" class="external-link">image</a></span><span class="op">(</span><span class="va">Postsamp</span><span class="op">$</span><span class="va">postdiscovery</span><span class="op">[</span><span class="va">subject</span>,,<span class="op">]</span>, col<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/grDevices/palettes.html" class="external-link">heat.colors</a></span><span class="op">(</span><span class="fl">8</span><span class="op">)</span>,</span>
 <span>   main<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="st">"Subject "</span>,<span class="va">subject</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <div class="figure" style="text-align: center">
-<img src="BHMSMAfMRIvignette_files/figure-html/PostDiscovery-1.png" alt="Posterior discovery images for the 3 subjects" width="1152"><p class="caption">
+<img src="BHMSMAfMRIvignette_files/figure-html/PostDiscovery-1.png" class="r-plt" alt="Posterior discovery images for the 3 subjects" width="1152"><p class="caption">
 Posterior discovery images for the 3 subjects
 </p>
 </div>
@@ -555,7 +567,7 @@ the posterior group coefficient image for the simulated dataset.</p>
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/par.html" class="external-link">par</a></span><span class="op">(</span>mfrow<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">1</span><span class="op">)</span>,cex<span class="op">=</span><span class="fl">0.5</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/image.html" class="external-link">image</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/MathFun.html" class="external-link">abs</a></span><span class="op">(</span><span class="va">postgroup</span><span class="op">$</span><span class="va">groupcoef</span><span class="op">)</span>,col<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/grDevices/palettes.html" class="external-link">heat.colors</a></span><span class="op">(</span><span class="fl">8</span><span class="op">)</span>,zlim<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0</span>,<span class="fl">6</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <div class="figure" style="text-align: center">
-<img src="BHMSMAfMRIvignette_files/figure-html/PostGroupCoef-1.png" alt="Posterior group regression coefficient image" width="240"><p class="caption">
+<img src="BHMSMAfMRIvignette_files/figure-html/PostGroupCoef-1.png" class="r-plt" alt="Posterior group regression coefficient image" width="240"><p class="caption">
 Posterior group regression coefficient image
 </p>
 </div>
@@ -563,7 +575,7 @@ Posterior group regression coefficient image
 <div class="section level3">
 <h3 class="unnumbered" id="references">References<a class="anchor" aria-label="anchor" href="#references"></a>
 </h3>
-<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0">
 <div id="ref-AFNI" class="csl-entry">
 Cox, R. W. 1996. <span>“AFNI: Software for Analysis and Visualization of
 Functional Magnetic Resonance Neuroimages.”</span> <em>Computers and
@@ -621,9 +633,7 @@ Software</em> 44 (6): 1–28.
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
 
-        <nav id="toc" data-toggle="toc"><h2 data-toc-skip>Contents</h2>
-    </nav>
-</div>
+      </div>
 
 </div>
 
@@ -636,16 +646,16 @@ Software</em> 44 (6): 1–28.
 
 <div class="pkgdown">
   <p></p>
-<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.2.0.</p>
 </div>
 
       </footer>
 </div>
 
-  
 
 
-  
+
+
 
   </body>
 </html>
