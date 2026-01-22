@@ -2,9 +2,9 @@
 // Generator token: 10BE3573-1514-4C36-9D1C-5A225CD40393
 
 #include <RcppArmadillo.h>
+#include <Rcpp.h>
 
 using namespace Rcpp;
-using namespace arma;
 
 #ifdef RCPP_USE_GLOBAL_ROSTREAM
 Rcpp::Rostream<true>&  Rcpp::Rcout = Rcpp::Rcpp_cout_get();
@@ -12,11 +12,11 @@ Rcpp::Rostream<false>& Rcpp::Rcerr = Rcpp::Rcpp_cerr_get();
 #endif
 
 // glmcoef_sub
-List glmcoef_sub(uword grid, arma::cube D_sub, arma::mat X);
+List glmcoef_sub(arma::uword grid, arma::cube D_sub, arma::mat X);
 RcppExport SEXP _BHMSMAfMRI_glmcoef_sub(SEXP gridSEXP, SEXP D_subSEXP, SEXP XSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
-    Rcpp::traits::input_parameter< uword >::type grid(gridSEXP);
+    Rcpp::traits::input_parameter< arma::uword >::type grid(gridSEXP);
     Rcpp::traits::input_parameter< arma::cube >::type D_sub(D_subSEXP);
     Rcpp::traits::input_parameter< arma::mat >::type X(XSEXP);
     rcpp_result_gen = Rcpp::wrap(glmcoef_sub(grid, D_sub, X));
@@ -24,7 +24,7 @@ BEGIN_RCPP
 END_RCPP
 }
 // minus_ll
-double minus_ll(double C0, double C1, double C2, double C3, double C4, double C5, arma::uvec subs, uword grid, arma::mat waveletcoefmat);
+double minus_ll(double C0, double C1, double C2, double C3, double C4, double C5, arma::uvec subs, arma::uword grid, arma::mat waveletcoefmat);
 RcppExport SEXP _BHMSMAfMRI_minus_ll(SEXP C0SEXP, SEXP C1SEXP, SEXP C2SEXP, SEXP C3SEXP, SEXP C4SEXP, SEXP C5SEXP, SEXP subsSEXP, SEXP gridSEXP, SEXP waveletcoefmatSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
@@ -35,14 +35,14 @@ BEGIN_RCPP
     Rcpp::traits::input_parameter< double >::type C4(C4SEXP);
     Rcpp::traits::input_parameter< double >::type C5(C5SEXP);
     Rcpp::traits::input_parameter< arma::uvec >::type subs(subsSEXP);
-    Rcpp::traits::input_parameter< uword >::type grid(gridSEXP);
+    Rcpp::traits::input_parameter< arma::uword >::type grid(gridSEXP);
     Rcpp::traits::input_parameter< arma::mat >::type waveletcoefmat(waveletcoefmatSEXP);
     rcpp_result_gen = Rcpp::wrap(minus_ll(C0, C1, C2, C3, C4, C5, subs, grid, waveletcoefmat));
     return rcpp_result_gen;
 END_RCPP
 }
 // ll
-double ll(double C0, double C1, double C2, double C3, double C4, double C5, arma::uvec subs, uword grid, arma::mat waveletcoefmat);
+double ll(double C0, double C1, double C2, double C3, double C4, double C5, arma::uvec subs, arma::uword grid, arma::mat waveletcoefmat);
 RcppExport SEXP _BHMSMAfMRI_ll(SEXP C0SEXP, SEXP C1SEXP, SEXP C2SEXP, SEXP C3SEXP, SEXP C4SEXP, SEXP C5SEXP, SEXP subsSEXP, SEXP gridSEXP, SEXP waveletcoefmatSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
@@ -53,14 +53,14 @@ BEGIN_RCPP
     Rcpp::traits::input_parameter< double >::type C4(C4SEXP);
     Rcpp::traits::input_parameter< double >::type C5(C5SEXP);
     Rcpp::traits::input_parameter< arma::uvec >::type subs(subsSEXP);
-    Rcpp::traits::input_parameter< uword >::type grid(gridSEXP);
+    Rcpp::traits::input_parameter< arma::uword >::type grid(gridSEXP);
     Rcpp::traits::input_parameter< arma::mat >::type waveletcoefmat(waveletcoefmatSEXP);
     rcpp_result_gen = Rcpp::wrap(ll(C0, C1, C2, C3, C4, C5, subs, grid, waveletcoefmat));
     return rcpp_result_gen;
 END_RCPP
 }
 // var_mle
-arma::mat var_mle(double C0, double C1, double C2, double C3, double C4, double C5, arma::uvec subs, uword grid, arma::mat waveletcoefmat, arma::vec h);
+arma::mat var_mle(double C0, double C1, double C2, double C3, double C4, double C5, arma::uvec subs, arma::uword grid, arma::mat waveletcoefmat, arma::vec h);
 RcppExport SEXP _BHMSMAfMRI_var_mle(SEXP C0SEXP, SEXP C1SEXP, SEXP C2SEXP, SEXP C3SEXP, SEXP C4SEXP, SEXP C5SEXP, SEXP subsSEXP, SEXP gridSEXP, SEXP waveletcoefmatSEXP, SEXP hSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
@@ -71,7 +71,7 @@ BEGIN_RCPP
     Rcpp::traits::input_parameter< double >::type C4(C4SEXP);
     Rcpp::traits::input_parameter< double >::type C5(C5SEXP);
     Rcpp::traits::input_parameter< arma::uvec >::type subs(subsSEXP);
-    Rcpp::traits::input_parameter< uword >::type grid(gridSEXP);
+    Rcpp::traits::input_parameter< arma::uword >::type grid(gridSEXP);
     Rcpp::traits::input_parameter< arma::mat >::type waveletcoefmat(waveletcoefmatSEXP);
     Rcpp::traits::input_parameter< arma::vec >::type h(hSEXP);
     rcpp_result_gen = Rcpp::wrap(var_mle(C0, C1, C2, C3, C4, C5, subs, grid, waveletcoefmat, h));
@@ -79,14 +79,14 @@ BEGIN_RCPP
 END_RCPP
 }
 // LL
-arma::vec LL(arma::vec w, uword l, uword j, uword n, arma::mat waveletcoefmat, double C0, double C1, double C2, double C3, double C4, double C5);
+arma::vec LL(arma::vec w, arma::uword l, arma::uword j, arma::uword n, arma::mat waveletcoefmat, double C0, double C1, double C2, double C3, double C4, double C5);
 RcppExport SEXP _BHMSMAfMRI_LL(SEXP wSEXP, SEXP lSEXP, SEXP jSEXP, SEXP nSEXP, SEXP waveletcoefmatSEXP, SEXP C0SEXP, SEXP C1SEXP, SEXP C2SEXP, SEXP C3SEXP, SEXP C4SEXP, SEXP C5SEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::traits::input_parameter< arma::vec >::type w(wSEXP);
-    Rcpp::traits::input_parameter< uword >::type l(lSEXP);
-    Rcpp::traits::input_parameter< uword >::type j(jSEXP);
-    Rcpp::traits::input_parameter< uword >::type n(nSEXP);
+    Rcpp::traits::input_parameter< arma::uword >::type l(lSEXP);
+    Rcpp::traits::input_parameter< arma::uword >::type j(jSEXP);
+    Rcpp::traits::input_parameter< arma::uword >::type n(nSEXP);
     Rcpp::traits::input_parameter< arma::mat >::type waveletcoefmat(waveletcoefmatSEXP);
     Rcpp::traits::input_parameter< double >::type C0(C0SEXP);
     Rcpp::traits::input_parameter< double >::type C1(C1SEXP);
@@ -99,14 +99,14 @@ BEGIN_RCPP
 END_RCPP
 }
 // pklj
-arma::vec pklj(arma::vec w, uword l, uword j, uword i, arma::mat waveletcoefmat, double C4, double C5);
+arma::vec pklj(arma::vec w, arma::uword l, arma::uword j, arma::uword i, arma::mat waveletcoefmat, double C4, double C5);
 RcppExport SEXP _BHMSMAfMRI_pklj(SEXP wSEXP, SEXP lSEXP, SEXP jSEXP, SEXP iSEXP, SEXP waveletcoefmatSEXP, SEXP C4SEXP, SEXP C5SEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::traits::input_parameter< arma::vec >::type w(wSEXP);
-    Rcpp::traits::input_parameter< uword >::type l(lSEXP);
-    Rcpp::traits::input_parameter< uword >::type j(jSEXP);
-    Rcpp::traits::input_parameter< uword >::type i(iSEXP);
+    Rcpp::traits::input_parameter< arma::uword >::type l(lSEXP);
+    Rcpp::traits::input_parameter< arma::uword >::type j(jSEXP);
+    Rcpp::traits::input_parameter< arma::uword >::type i(iSEXP);
     Rcpp::traits::input_parameter< arma::mat >::type waveletcoefmat(waveletcoefmatSEXP);
     Rcpp::traits::input_parameter< double >::type C4(C4SEXP);
     Rcpp::traits::input_parameter< double >::type C5(C5SEXP);
@@ -115,12 +115,12 @@ BEGIN_RCPP
 END_RCPP
 }
 // pklj_bar
-arma::mat pklj_bar(uword grid, uword n, arma::mat waveletcoefmat, double C0, double C1, double C2, double C3, double C4, double C5);
+arma::mat pklj_bar(arma::uword grid, arma::uword n, arma::mat waveletcoefmat, double C0, double C1, double C2, double C3, double C4, double C5);
 RcppExport SEXP _BHMSMAfMRI_pklj_bar(SEXP gridSEXP, SEXP nSEXP, SEXP waveletcoefmatSEXP, SEXP C0SEXP, SEXP C1SEXP, SEXP C2SEXP, SEXP C3SEXP, SEXP C4SEXP, SEXP C5SEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
-    Rcpp::traits::input_parameter< uword >::type grid(gridSEXP);
-    Rcpp::traits::input_parameter< uword >::type n(nSEXP);
+    Rcpp::traits::input_parameter< arma::uword >::type grid(gridSEXP);
+    Rcpp::traits::input_parameter< arma::uword >::type n(nSEXP);
     Rcpp::traits::input_parameter< arma::mat >::type waveletcoefmat(waveletcoefmatSEXP);
     Rcpp::traits::input_parameter< double >::type C0(C0SEXP);
     Rcpp::traits::input_parameter< double >::type C1(C1SEXP);
@@ -133,12 +133,12 @@ BEGIN_RCPP
 END_RCPP
 }
 // post_wavelet_coef
-List post_wavelet_coef(uword grid, uword n, arma::mat waveletcoefmat, arma::mat pkljbar, double C4, double C5);
+List post_wavelet_coef(arma::uword grid, arma::uword n, arma::mat waveletcoefmat, arma::mat pkljbar, double C4, double C5);
 RcppExport SEXP _BHMSMAfMRI_post_wavelet_coef(SEXP gridSEXP, SEXP nSEXP, SEXP waveletcoefmatSEXP, SEXP pkljbarSEXP, SEXP C4SEXP, SEXP C5SEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
-    Rcpp::traits::input_parameter< uword >::type grid(gridSEXP);
-    Rcpp::traits::input_parameter< uword >::type n(nSEXP);
+    Rcpp::traits::input_parameter< arma::uword >::type grid(gridSEXP);
+    Rcpp::traits::input_parameter< arma::uword >::type n(nSEXP);
     Rcpp::traits::input_parameter< arma::mat >::type waveletcoefmat(waveletcoefmatSEXP);
     Rcpp::traits::input_parameter< arma::mat >::type pkljbar(pkljbarSEXP);
     Rcpp::traits::input_parameter< double >::type C4(C4SEXP);
@@ -158,19 +158,19 @@ BEGIN_RCPP
 END_RCPP
 }
 // post_samp
-arma::cube post_samp(uword nsample, uword grid, uword n, arma::mat waveletcoefmat, arma::mat pkljbar, double C4, double C5, uword seed);
+arma::cube post_samp(arma::uword nsample, arma::uword grid, arma::uword n, arma::mat waveletcoefmat, arma::mat pkljbar, double C4, double C5, arma::uword seed);
 RcppExport SEXP _BHMSMAfMRI_post_samp(SEXP nsampleSEXP, SEXP gridSEXP, SEXP nSEXP, SEXP waveletcoefmatSEXP, SEXP pkljbarSEXP, SEXP C4SEXP, SEXP C5SEXP, SEXP seedSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< uword >::type nsample(nsampleSEXP);
-    Rcpp::traits::input_parameter< uword >::type grid(gridSEXP);
-    Rcpp::traits::input_parameter< uword >::type n(nSEXP);
+    Rcpp::traits::input_parameter< arma::uword >::type nsample(nsampleSEXP);
+    Rcpp::traits::input_parameter< arma::uword >::type grid(gridSEXP);
+    Rcpp::traits::input_parameter< arma::uword >::type n(nSEXP);
     Rcpp::traits::input_parameter< arma::mat >::type waveletcoefmat(waveletcoefmatSEXP);
     Rcpp::traits::input_parameter< arma::mat >::type pkljbar(pkljbarSEXP);
     Rcpp::traits::input_parameter< double >::type C4(C4SEXP);
     Rcpp::traits::input_parameter< double >::type C5(C5SEXP);
-    Rcpp::traits::input_parameter< uword >::type seed(seedSEXP);
+    Rcpp::traits::input_parameter< arma::uword >::type seed(seedSEXP);
     rcpp_result_gen = Rcpp::wrap(post_samp(nsample, grid, n, waveletcoefmat, pkljbar, C4, C5, seed));
     return rcpp_result_gen;
 END_RCPP

@@ -8,12 +8,12 @@ using namespace arma;
  
 
 //[[Rcpp::export(rng = false)]]
-List glmcoef_sub(uword grid, arma::cube D_sub, arma::mat X)
+List glmcoef_sub(arma::uword grid, arma::cube D_sub, arma::mat X)
 {
 	int p = X.n_cols;
 	arma::cube GLM_coef_nonst(grid,grid,p), GLM_coef_st(grid,grid,p), GLM_coef_se(grid,grid,p);
-	for(uword i=0; i<grid; i++)
-	for(uword j=0; j<grid; j++)
+	for(arma::uword i=0; i<grid; i++)
+	for(arma::uword j=0; j<grid; j++)
 	{
 		arma::vec y = D_sub.subcube(i,j,0,  i,j,D_sub.n_slices-1);
 		if(sum(y)!=0)
@@ -38,18 +38,18 @@ List glmcoef_sub(uword grid, arma::cube D_sub, arma::mat X)
 
 
 //[[Rcpp::export(rng = false)]]
-double minus_ll(double C0, double C1, double C2, double C3, double C4, double C5, arma::uvec subs, uword grid, arma::mat waveletcoefmat )
+double minus_ll(double C0, double C1, double C2, double C3, double C4, double C5, arma::uvec subs, arma::uword grid, arma::mat waveletcoefmat )
 {
 	double aux = 0.0;
 	double aux1;
 
-	for(uword i=0; i<subs.n_elem; i++)
-	for(uword l=0; l<log2(grid); l++)
+	for(arma::uword i=0; i<subs.n_elem; i++)
+	for(arma::uword l=0; l<log2(grid); l++)
 	{
 		arma::vec auxind = 2*regspace(0,l-1);
-		uword sum1 = round(sum( exp(log(2)*auxind)*3 ));
+		arma::uword sum1 = round(sum( exp(log(2)*auxind)*3 ));
 
-		for(uword j=0; j<pow(2,2*l)*3; j++)
+		for(arma::uword j=0; j<pow(2,2*l)*3; j++)
 		{
 			double d;
 			if(l==0) d = waveletcoefmat(subs(i)-1,j); else d = waveletcoefmat(subs(i)-1, sum1 + j);
@@ -72,14 +72,14 @@ double minus_ll(double C0, double C1, double C2, double C3, double C4, double C5
 
 
 //[[Rcpp::export(rng = false)]]
-double ll(double C0, double C1, double C2, double C3, double C4, double C5, arma::uvec subs, uword grid, arma::mat waveletcoefmat)
+double ll(double C0, double C1, double C2, double C3, double C4, double C5, arma::uvec subs, arma::uword grid, arma::mat waveletcoefmat)
 {
 	return(- minus_ll(C0,C1,C2,C3,C4,C5,subs,grid,waveletcoefmat) );
 }
 
 
 //[[Rcpp::export(rng = false)]]
-arma::mat var_mle(double C0, double C1, double C2, double C3, double C4, double C5, arma::uvec subs, uword grid, arma::mat waveletcoefmat, arma::vec h)
+arma::mat var_mle(double C0, double C1, double C2, double C3, double C4, double C5, arma::uvec subs, arma::uword grid, arma::mat waveletcoefmat, arma::vec h)
 {
 	arma::mat IM = mat(6,6);
 
@@ -128,16 +128,16 @@ arma::mat var_mle(double C0, double C1, double C2, double C3, double C4, double 
  
 /// Writing the loglikelihood ln(p(w_lj/y)) as a function of w_lj
 //[[Rcpp::export(rng = false)]]
-arma::vec LL(arma::vec w, uword l, uword j, uword n, arma::mat waveletcoefmat, double C0, double C1, double C2, double C3, double C4, double C5)
+arma::vec LL(arma::vec w, arma::uword l, arma::uword j, arma::uword n, arma::mat waveletcoefmat, double C0, double C1, double C2, double C3, double C4, double C5)
 {
 	double d;
 	arma::vec aux(w.n_elem), aux1;
 	arma::vec auxind = 2*regspace(0,l-1);
-	uword sum1 = round(sum( exp(log(2)*auxind)*3 ));
+	arma::uword sum1 = round(sum( exp(log(2)*auxind)*3 ));
 
 	double c_l = C4 * pow(2,-C5*l);
 		
-	for(uword i=0; i<n; i++)
+	for(arma::uword i=0; i<n; i++)
 	{
 		if(l==0) d = waveletcoefmat(i,j-1); else d = waveletcoefmat(i, sum1+j-1);
 		
@@ -156,12 +156,12 @@ arma::vec LL(arma::vec w, uword l, uword j, uword n, arma::mat waveletcoefmat, d
 
 /// Writing piklj as a function of w_lj 
 //[[Rcpp::export(rng = false)]]
-arma::vec pklj(arma::vec w, uword l, uword j, uword i, arma::mat waveletcoefmat, double C4, double C5)
+arma::vec pklj(arma::vec w, arma::uword l, arma::uword j, arma::uword i, arma::mat waveletcoefmat, double C4, double C5)
 {
 	double d,aux;
 	arma::vec O,p;
 	arma::vec auxind = 2*regspace(0,l-1);
-	uword sum1 = round(sum( exp(log(2)*auxind)*3 ));
+	arma::uword sum1 = round(sum( exp(log(2)*auxind)*3 ));
 	if(l==0) d = waveletcoefmat(i-1,j-1); else d = waveletcoefmat(i-1, sum1+j-1);
 	double c_l = C4 * pow(2,-C5*l);
 
@@ -175,27 +175,27 @@ arma::vec pklj(arma::vec w, uword l, uword j, uword i, arma::mat waveletcoefmat,
 		
 /// Using Trapezoidal rule to evaluate p_klj bar 
 //[[Rcpp::export(rng = false)]]
-arma::mat pklj_bar(uword grid, uword n, arma::mat waveletcoefmat, double C0, double C1, double C2, double C3, double C4, double C5)
+arma::mat pklj_bar(arma::uword grid, arma::uword n, arma::mat waveletcoefmat, double C0, double C1, double C2, double C3, double C4, double C5)
 {
-	uword N = 1000;
-	uword a = 0;
-	uword b = 1;
+	arma::uword N = 1000;
+	arma::uword a = 0;
+	arma::uword b = 1;
 	arma::mat pklj_bar(n, pow(grid,2)-1);
 
 	arma::vec w_grid = a + regspace(0,N) * (b-a)/N;
 
-	for(uword l=0; l<log2(grid); l++)
-	for(uword j=0; j<pow(2,2*l)*3; j++)
+	for(arma::uword l=0; l<log2(grid); l++)
+	for(arma::uword j=0; j<pow(2,2*l)*3; j++)
 	{
 		arma::vec w_density_unnorm = exp( LL(w_grid,l,j+1,n,waveletcoefmat,C0,C1,C2,C3,C4,C5) );
-		for(uword id=0; id<w_grid.n_elem; id++) 
+		for(arma::uword id=0; id<w_grid.n_elem; id++) 
 		{
 		  if(!std::isfinite(w_density_unnorm(id))) w_density_unnorm(id) = 1;
 		}	
 		double sum_w = sum(w_density_unnorm.elem(regspace<uvec>(1,N-1))) + 0.5 * (w_density_unnorm(0)+w_density_unnorm(N));
 		arma::vec  w_density_norm = w_density_unnorm / sum_w;
 
-		for(uword i=0; i<n; i++)
+		for(arma::uword i=0; i<n; i++)
 		{
 			arma::vec pklj_func_w = pklj(w_grid,l,j+1,i+1,waveletcoefmat,C4,C5);
 
@@ -205,7 +205,7 @@ arma::mat pklj_bar(uword grid, uword n, arma::mat waveletcoefmat, double C0, dou
 			double integral = sum(prod_p_wd.elem(regspace<uvec>(1,N-1)))  + 0.5*(prod_p_wd(0)+prod_p_wd(N));
 
 			arma::vec auxind = 2*regspace(0,l-1);
-			uword sum1 = round(sum( exp(log(2)*auxind)*3 ));
+			arma::uword sum1 = round(sum( exp(log(2)*auxind)*3 ));
 			if(l==0)  pklj_bar(i,j) = integral; else pklj_bar(i,sum1+j) = integral;
 		}
 	}	
@@ -215,20 +215,20 @@ arma::mat pklj_bar(uword grid, uword n, arma::mat waveletcoefmat, double C0, dou
 
 /// Posterior mean/median of wavelet coefficients
 //[[Rcpp::export(rng = false)]]
-List post_wavelet_coef(uword grid, uword n, arma::mat waveletcoefmat, arma::mat pkljbar, double C4, double C5)
+List post_wavelet_coef(arma::uword grid, arma::uword n, arma::mat waveletcoefmat, arma::mat pkljbar, double C4, double C5)
 {
 	arma::mat PostMeanWaveletCoeff(n,pow(grid,2)-1);
 	arma::mat PostMedianWaveletCoeff(n,pow(grid,2)-1);
-	for(uword i=0; i<n; i++)
+	for(arma::uword i=0; i<n; i++)
 	{
 		arma::vec PostMean(pow(grid,2)-1), PostMedian(pow(grid,2)-1);
 		double d, p;
 		int counter = 0;
-		for(uword l=0; l<log2(grid); l++)
+		for(arma::uword l=0; l<log2(grid); l++)
 	    {
 	        arma::vec auxind = 2*regspace(0,l-1);
-	      	uword sum1 = round(sum( exp(log(2)*auxind)*3 ));
-    		for(uword j=0; j<pow(2,2*l)*3; j++)
+	      	arma::uword sum1 = round(sum( exp(log(2)*auxind)*3 ));
+    		for(arma::uword j=0; j<pow(2,2*l)*3; j++)
     		{
     			if(l==0) 
     			{
@@ -276,21 +276,21 @@ void set_seed(unsigned int seed)
 
 /// Posterior sample generation
 // [[Rcpp::export]]
-arma::cube post_samp(uword nsample, uword grid, uword n, arma::mat waveletcoefmat, arma::mat pkljbar, double C4, double C5, uword seed)
+arma::cube post_samp(arma::uword nsample, arma::uword grid, arma::uword n, arma::mat waveletcoefmat, arma::mat pkljbar, double C4, double C5, arma::uword seed)
 {
 	set_seed(seed);
 	arma::cube dsamp_cube(n,pow(grid,2)-1,nsample);
-	for(uword i=0; i<n; i++)
+	for(arma::uword i=0; i<n; i++)
 	{
 		arma::mat dsamp_mat(pow(grid,2)-1,nsample);
-		for(uword g=0; g<nsample; g++)
+		for(arma::uword g=0; g<nsample; g++)
 		{
 			arma::vec dsamp(pow(grid,2)-1);
-			for(uword l=0; l<log2(grid); l++)
+			for(arma::uword l=0; l<log2(grid); l++)
 		    {
 		        arma::vec auxind = 2*regspace(0,l-1);
-		      	uword sum1 = round(sum( exp(log(2)*auxind)*3 ));
-				for(uword j=0; j<pow(2,2*l)*3; j++)
+		      	arma::uword sum1 = round(sum( exp(log(2)*auxind)*3 ));
+				for(arma::uword j=0; j<pow(2,2*l)*3; j++)
 				{
 					double d, p;
 					if(l==0) 

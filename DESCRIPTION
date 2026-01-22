@@ -13,3 +13,4 @@ VignetteBuilder: knitr
 URL: https://nilotpalsanyal.github.io/BHMSMAfMRI/
 BugReports: https://github.com/nilotpalsanyal/BHMSMAfMRI/issues
 Repository: CRAN
+Config/Needs/website: rmarkdown
