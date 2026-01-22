@@ -1,10 +1,10 @@
 Package: BHMSMAfMRI
 Type: Package
 Title: Bayesian Hierarchical Multi-Subject Multiscale Analysis of Functional MRI (fMRI) Data
-Version: 2.1
-Date: 2022-10-01
+Version: 2.3
+Date: 2025-09-23
 Authors@R: c(person("Nilotpal", "Sanyal", role = c("aut", "cre"), email = "nilotpal.sanyal@gmail.com", comment = c(ORCID = "0000-0003-4814-7602")), person("Marco A.R.", "Ferreira", role = "aut"))
-Description: Package BHMSMAfMRI performs Bayesian hierarchical multi-subject multiscale analysis of fMRI data as described in Sanyal & Ferreira (2012) <DOI:10.1016/j.neuroimage.2012.08.041>, or other multiscale data, using wavelet based prior that borrows strength across subjects and provides posterior smoothed images of the effect sizes and samples from the posterior distribution.
+Description: Package BHMSMAfMRI performs Bayesian hierarchical multi-subject multiscale analysis of fMRI data as described in Sanyal & Ferreira (2012) <DOI:10.1016/j.neuroimage.2012.08.041>, or other multiscale data, using wavelet-based prior that borrows strength across subjects and provides posterior smoothed images of the effect sizes and samples from the posterior distribution.
 License: GPL (>= 2)
 Imports: Rcpp (>= 1.0.9), oro.nifti, wavethresh
 LinkingTo: Rcpp, RcppArmadillo
